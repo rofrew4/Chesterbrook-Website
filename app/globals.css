@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 246 242 235;
+    --widget: 255 255 255;
+    --foreground: 26 26 26;
+    --surface: 241 235 229;
+    --border: 229 224 216;
+    --surface-border: 223 217 210;
+    --footer-border: 233 229 221;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: rgb(var(--background));
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    @apply font-sans antialiased;
+  }
+
+  .font-display {
+    font-variation-settings: "WONK" 0, "SOFT" 100;
+    font-weight: 300;
+  }
+
+  ::selection {
+    @apply bg-accent/15 text-foreground;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[11px] font-normal uppercase tracking-[0.25em] text-accent;
+  }
+
+  .nav-link {
+    @apply relative inline-block transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .tag-pill {
+    @apply inline-block rounded-full border border-border px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-secondary;
+  }
+
+  .mockup-frame {
+    @apply rounded-lg border border-surface-border bg-background shadow-mockup;
+  }
+
+  .mockup-frame--empty {
+    @apply min-h-0 bg-surface;
+  }
+
+  .btn-primary {
+    @apply rounded-full bg-accent px-6 py-2.5 text-[13px] font-medium text-white transition-colors duration-300 hover:bg-accent-dark;
+  }
+
+  .btn-primary--sm {
+    @apply px-4 py-2 text-[12px];
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .blog-prose {
+    @apply text-[17px] leading-[1.75] text-secondary;
+  }
+
+  .blog-prose p {
+    @apply mb-6;
+  }
+
+  .blog-prose h2 {
+    @apply mb-4 mt-12 font-display text-[clamp(1.35rem,3vw,1.75rem)] leading-snug tracking-tight text-foreground first:mt-0;
+  }
+
+  .blog-prose ul {
+    @apply mb-6 ml-5 list-disc space-y-3;
+  }
+
+  .blog-prose li {
+    @apply pl-1;
+  }
+
+  .blog-cta {
+    @apply mt-14 rounded-2xl border border-accent/15 bg-widget px-6 py-8 text-center shadow-mockup md:px-10 md:py-10;
+  }
+
+  .blog-cta p {
+    @apply mb-0 text-[16px] leading-relaxed text-secondary;
+  }
+
+  .blog-cta a {
+    @apply btn-primary mt-6 inline-block;
+  }
+}
+
+@layer utilities {
+  .scroll-mt-nav {
+    scroll-margin-top: 72px;
+  }
+}
