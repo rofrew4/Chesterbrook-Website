@@ -1,5 +1,5 @@
 import type { BlogPost } from "@/lib/blog";
-import { siteUrl } from "@/lib/blog";
+import { SITE_URL } from "@/lib/seo";
 
 export function BlogListingJsonLd() {
   const data = {
@@ -8,11 +8,11 @@ export function BlogListingJsonLd() {
     name: "Chesterbrook Insights",
     description:
       "Practical guides on CRE data, software, and AI adoption for property managers, brokers, and developers.",
-    url: `${siteUrl}/blog`,
+    url: `${SITE_URL}/blog`,
     publisher: {
       "@type": "Organization",
       name: "Chesterbrook",
-      url: siteUrl,
+      url: SITE_URL,
     },
   };
 
@@ -35,16 +35,16 @@ export function BlogPostJsonLd({ post }: { post: BlogPost }) {
     author: {
       "@type": "Organization",
       name: "Chesterbrook",
-      url: siteUrl,
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: "Chesterbrook",
-      url: siteUrl,
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteUrl}/blog/${post.slug}`,
+      "@id": `${SITE_URL}/blog/${post.slug}`,
     },
     keywords: post.keywords.join(", "),
     articleSection: "Commercial Real Estate",
