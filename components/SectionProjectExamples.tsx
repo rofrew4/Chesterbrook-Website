@@ -25,6 +25,7 @@ export default function SectionProjectExamples() {
             description={item.description}
             mockupSrc={item.mockupSrc}
             mockupAlt={item.mockupAlt}
+            mockupBlur={item.mockupBlur}
             fallback={getMockupFallback(item.id)}
           />
         ))}

@@ -12,6 +12,7 @@ interface ZigzagRowProps {
   description: string;
   mockupSrc?: string;
   mockupAlt: string;
+  mockupBlur?: number;
   fallback: ReactNode;
 }
 
@@ -21,6 +22,7 @@ export default function ZigzagRow({
   description,
   mockupSrc,
   mockupAlt,
+  mockupBlur,
   fallback,
 }: ZigzagRowProps) {
   const ref = useRef<HTMLElement>(null);
@@ -54,7 +56,12 @@ export default function ZigzagRow({
         }
         transition={{ duration: 0.55, delay: 0.12, ease }}
       >
-        <FigmaSlot src={mockupSrc} alt={mockupAlt} fallback={fallback} />
+        <FigmaSlot
+          src={mockupSrc}
+          alt={mockupAlt}
+          fallback={fallback}
+          imageBlur={mockupBlur}
+        />
       </motion.div>
     </article>
   );

@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/links";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export default function OrganizationJsonLd() {
@@ -7,8 +8,8 @@ export default function OrganizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
-    email: "rofrew4@gmail.com",
-    telephone: "+1-571-263-3755",
+    email: CONTACT_EMAIL,
+    telephone: `+1-${CONTACT_PHONE}`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "McLean",

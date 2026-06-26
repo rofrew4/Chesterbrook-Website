@@ -6,6 +6,8 @@ export interface ZigzagItem {
   /** Drop your Figma export in public/mockups/ and set the path here */
   mockupSrc?: string;
   mockupAlt: string;
+  /** CSS blur in pixels — applied via inline style so it always renders */
+  mockupBlur?: number;
   reverse?: boolean;
 }
 
@@ -23,7 +25,7 @@ export const projectExamples: ZigzagItem[] = [
     tag: "Property Management",
     title: "Competitor scraping",
     description:
-      "Scrapes competitor listings and delivers a daily feed of property addresses with vacancy counts — so your team knows exactly who to call.",
+      "Scrapes competitor listings and delivers a daily feed of property addresses with vacancy counts, so your team knows exactly who to call.",
     mockupAlt: "Competitor vacancy list by address",
   },
   {
@@ -33,6 +35,40 @@ export const projectExamples: ZigzagItem[] = [
     description:
       "Structured extraction from lease PDFs into the spreadsheet format your team already uses. OCR plus LLM parsing with human review on every field.",
     mockupAlt: "Lease abstraction interface",
+  },
+  {
+    id: "content-engine",
+    tag: "Marketing",
+    title: "Content engine",
+    description:
+      "Scrapes relevant news sources and websites in your niche, delivers you daily reports on current events, generates posts on each topic in your voice, then routes everything through a human review queue.",
+    mockupAlt: "Content review queue with drafts, channels, and statuses",
+  },
+  {
+    id: "email-agents",
+    tag: "Operations",
+    title: "Email agents",
+    description:
+      "Reads inbound mail, classifies intent, drafts a reply in your voice, and surfaces anything that needs a human. Routine threads handled end-to-end, exceptions escalated cleanly.",
+    mockupAlt: "Inbox triage with intent classification and actions",
+  },
+  {
+    id: "inbound-investment-list",
+    tag: "Investment",
+    title: "Inbound investment list",
+    description:
+      "Normalizes incoming deals from brokers, emails, and CRMs into one ranked queue. Dedupes, enriches, and scores against your buy box so nothing slips and your team works the top of the list first.",
+    mockupAlt: "Inbound deal queue ranked by fit score",
+  },
+  {
+    id: "custom-crms",
+    tag: "Platforms",
+    title: "Custom CRMs",
+    description:
+      "Purpose-built CRMs that replace your Salesforce or HubSpot stack, modeled on how your team actually works, not a generic sales pipeline. Owns your contacts, deals, comms, and reporting in one place you control.",
+    mockupSrc: "/mockups/custom-crm.png",
+    mockupAlt: "Custom CRM leads kanban board",
+    mockupBlur: 1.7,
   },
 ];
 
