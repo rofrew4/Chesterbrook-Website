@@ -33,120 +33,128 @@ export default function LeaseExtractionFallback() {
   let lineIndex = 0;
 
   return (
-    <div ref={ref} className="p-5 md:p-8">
-      <div className="grid gap-5 md:grid-cols-[1fr_72px_1fr] md:items-stretch">
-        <motion.div
-          className="rounded-md border border-border bg-background px-5 py-6 shadow-sm md:px-6 md:py-7"
-          initial={false}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -16 }}
-          transition={{ duration: 0.45, ease }}
-        >
-          <div className="mx-auto mb-5 h-1.5 w-12 rounded-full bg-border" />
-          <div className="space-y-5">
-            {documentParagraphs.map((paragraph, pIdx) => (
-              <div key={pIdx} className="space-y-2">
-                {paragraph.lines.map((width, lIdx) => {
-                  const key = `${pIdx}-${lIdx}`;
-                  const isHighlight = highlightPositions.has(key);
-                  const currentLine = lineIndex++;
-                  return (
-                    <motion.div
-                      key={key}
-                      className={`h-2 rounded-sm ${width} ${
-                        isHighlight
-                          ? "bg-accent/25 ring-1 ring-accent/50"
-                          : "bg-border/80"
-                      }`}
-                      initial={false}
-                      animate={
-                        inView
-                          ? { opacity: isHighlight ? 1 : 0.55, scaleX: 1 }
-                          : { opacity: 0, scaleX: 0.6 }
-                      }
-                      transition={{
-                        delay: 0.08 + currentLine * 0.04,
-                        duration: 0.35,
-                        ease,
-                      }}
-                      style={{ transformOrigin: "left" }}
-                    />
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <div className="relative hidden min-h-[200px] md:block">
-          <svg
-            viewBox="0 0 80 190"
-            className="h-full w-full"
-            fill="none"
-            aria-hidden
-            preserveAspectRatio="none"
+    <div ref={ref} className="overflow-hidden p-4 md:relative md:p-3">
+      {/* Scaled down on md+ so the side-column layout keeps the original design */}
+      <div className="md:absolute md:left-3 md:top-3 md:w-[520px] md:origin-top-left md:scale-[0.65]">
+        <div className="grid gap-5 md:grid-cols-[1fr_72px_1fr] md:items-stretch">
+          <motion.div
+            className="rounded-md border border-border bg-background px-5 py-6 shadow-sm md:px-6 md:py-7"
+            initial={false}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -16 }}
+            transition={{ duration: 0.45, ease }}
           >
-            {connectorPaths.map((d, i) => (
-              <motion.path
-                key={d}
-                d={d}
-                stroke="#7B1E3A"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                initial={false}
-                animate={
-                  inView
-                    ? { pathLength: 1, opacity: 1 }
-                    : { pathLength: 0, opacity: 0.25 }
-                }
-                transition={{
-                  pathLength: { delay: 0.45 + i * 0.1, duration: 0.45, ease },
-                  opacity: { delay: 0.45 + i * 0.1, duration: 0.25 },
-                }}
-              />
-            ))}
-            {connectorPaths.map((_, i) => (
-              <motion.circle
-                key={`dot-${i}`}
-                cx="80"
-                cy={48 + i * 40}
-                r="3"
-                fill="#7B1E3A"
-                initial={false}
-                animate={inView ? { scale: 1 } : { scale: 0 }}
-                transition={{ delay: 0.75 + i * 0.1, ease }}
-              />
-            ))}
-          </svg>
-        </div>
+            <div className="mx-auto mb-5 h-1.5 w-12 rounded-full bg-border" />
+            <div className="space-y-5">
+              {documentParagraphs.map((paragraph, pIdx) => (
+                <div key={pIdx} className="space-y-2">
+                  {paragraph.lines.map((width, lIdx) => {
+                    const key = `${pIdx}-${lIdx}`;
+                    const isHighlight = highlightPositions.has(key);
+                    const currentLine = lineIndex++;
+                    return (
+                      <motion.div
+                        key={key}
+                        className={`h-2 rounded-sm ${width} ${
+                          isHighlight
+                            ? "bg-accent/25 ring-1 ring-accent/50"
+                            : "bg-border/80"
+                        }`}
+                        initial={false}
+                        animate={
+                          inView
+                            ? { opacity: isHighlight ? 1 : 0.55, scaleX: 1 }
+                            : { opacity: 0, scaleX: 0.6 }
+                        }
+                        transition={{
+                          delay: 0.08 + currentLine * 0.04,
+                          duration: 0.35,
+                          ease,
+                        }}
+                        style={{ transformOrigin: "left" }}
+                      />
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="overflow-hidden rounded-md border border-border"
-          initial={false}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 16 }}
-          transition={{ duration: 0.45, delay: 0.1, ease }}
-        >
-          <div className="grid grid-cols-4 gap-1 border-b border-border bg-surface px-3 py-2 text-[10px] uppercase tracking-wider text-muted">
-            <span>Tenant</span>
-            <span>SF</span>
-            <span>Rent</span>
-            <span>Type</span>
-          </div>
-          {spreadsheetRows.map((row, i) => (
-            <motion.div
-              key={row.tenant}
-              className="grid grid-cols-4 gap-1 border-b border-border px-3 py-2.5 text-[11px] last:border-0 md:text-[12px]"
-              initial={false}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 8 }}
-              transition={{ delay: 0.65 + i * 0.1, duration: 0.35, ease }}
+          <div className="relative hidden min-h-[200px] md:block">
+            <svg
+              viewBox="0 0 80 190"
+              className="h-full w-full"
+              fill="none"
+              aria-hidden
+              preserveAspectRatio="none"
             >
-              <span className="truncate text-foreground">{row.tenant}</span>
-              <span className="text-secondary">{row.sf}</span>
-              <span className="text-secondary">{row.rent}</span>
-              <span className="text-secondary">{row.type}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+              {connectorPaths.map((d, i) => (
+                <motion.path
+                  key={d}
+                  d={d}
+                  stroke="#7B1E3A"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  initial={false}
+                  animate={
+                    inView
+                      ? { pathLength: 1, opacity: 1 }
+                      : { pathLength: 0, opacity: 0.25 }
+                  }
+                  transition={{
+                    pathLength: {
+                      delay: 0.45 + i * 0.1,
+                      duration: 0.45,
+                      ease,
+                    },
+                    opacity: { delay: 0.45 + i * 0.1, duration: 0.25 },
+                  }}
+                />
+              ))}
+              {connectorPaths.map((_, i) => (
+                <motion.circle
+                  key={`dot-${i}`}
+                  cx="80"
+                  cy={48 + i * 40}
+                  r="3"
+                  fill="#7B1E3A"
+                  initial={false}
+                  animate={inView ? { scale: 1 } : { scale: 0 }}
+                  transition={{ delay: 0.75 + i * 0.1, ease }}
+                />
+              ))}
+            </svg>
+          </div>
+
+          <motion.div
+            className="overflow-hidden rounded-md border border-border"
+            initial={false}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 16 }}
+            transition={{ duration: 0.45, delay: 0.1, ease }}
+          >
+            <div className="grid grid-cols-4 gap-1 border-b border-border bg-surface px-3 py-2 text-[10px] uppercase tracking-wider text-muted">
+              <span>Tenant</span>
+              <span>SF</span>
+              <span>Rent</span>
+              <span>Type</span>
+            </div>
+            {spreadsheetRows.map((row, i) => (
+              <motion.div
+                key={row.tenant}
+                className="grid grid-cols-4 gap-1 border-b border-border px-3 py-2.5 text-[11px] last:border-0 md:text-[12px]"
+                initial={false}
+                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 8 }}
+                transition={{ delay: 0.65 + i * 0.1, duration: 0.35, ease }}
+              >
+                <span className="truncate text-foreground">{row.tenant}</span>
+                <span className="text-secondary">{row.sf}</span>
+                <span className="text-secondary">{row.rent}</span>
+                <span className="text-secondary">{row.type}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
+      <div className="hidden md:block md:h-[210px]" aria-hidden />
     </div>
   );
 }

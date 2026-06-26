@@ -16,7 +16,7 @@ export default function CompetitorScrapingFallback() {
   const inView = useInView(ref, { margin: "-40px" });
 
   return (
-    <div ref={ref} className="p-6 md:p-8">
+    <div ref={ref} className="p-4 md:p-5">
       <p className="text-[11px] uppercase tracking-[0.2em] text-muted">
         Competitor vacancy feed
       </p>

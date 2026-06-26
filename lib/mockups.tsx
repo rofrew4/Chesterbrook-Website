@@ -5,6 +5,7 @@ import LeaseExtractionFallback from "@/components/mockups/LeaseExtractionFallbac
 import ContentReviewQueueFallback from "@/components/mockups/ContentReviewQueueFallback";
 import InboxTriageFallback from "@/components/mockups/InboxTriageFallback";
 import InboundDealQueueFallback from "@/components/mockups/InboundDealQueueFallback";
+import CustomCrmFallback from "@/components/mockups/CustomCrmFallback";
 
 const projectFallbacks: Record<string, ReactNode> = {
   "deal-sourcing": <DealSourcingListFallback />,
@@ -13,7 +14,7 @@ const projectFallbacks: Record<string, ReactNode> = {
   "content-engine": <ContentReviewQueueFallback />,
   "email-agents": <InboxTriageFallback />,
   "inbound-investment-list": <InboundDealQueueFallback />,
-  "custom-crms": <InboundDealQueueFallback />,
+  "custom-crms": <CustomCrmFallback />,
 };
 
 export function getMockupFallback(id: string): ReactNode {

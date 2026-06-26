@@ -21,14 +21,6 @@ export const projectExamples: ZigzagItem[] = [
     mockupAlt: "Off-market lead list with addresses and phone numbers",
   },
   {
-    id: "competitor-scraping",
-    tag: "Property Management",
-    title: "Competitor scraping",
-    description:
-      "Scrapes competitor listings and delivers a daily feed of property addresses with vacancy counts, so your team knows exactly who to call.",
-    mockupAlt: "Competitor vacancy list by address",
-  },
-  {
     id: "lease-abstraction",
     tag: "Underwriting",
     title: "Lease abstraction & underwriting",
@@ -66,9 +58,15 @@ export const projectExamples: ZigzagItem[] = [
     title: "Custom CRMs",
     description:
       "Purpose-built CRMs that replace your Salesforce or HubSpot stack, modeled on how your team actually works, not a generic sales pipeline. Owns your contacts, deals, comms, and reporting in one place you control.",
-    mockupSrc: "/mockups/custom-crm.png",
     mockupAlt: "Custom CRM leads kanban board",
-    mockupBlur: 1.7,
+  },
+  {
+    id: "competitor-scraping",
+    tag: "Property Management",
+    title: "Competitor scraping",
+    description:
+      "Scrapes competitor listings and delivers a daily feed of property addresses with vacancy counts, so your team knows exactly who to call.",
+    mockupAlt: "Competitor vacancy list by address",
   },
 ];
 
