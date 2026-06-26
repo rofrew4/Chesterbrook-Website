@@ -1,9 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { HERO_VIDEOS } from "@/lib/heroVideos";
+import { useEffect, useRef, useState } from "react";
+import { getHeroVideos } from "@/lib/heroVideos";
 
 const CLIP_DURATION_MS = 6000;
+const MOBILE_MAX_WIDTH = 768;
+
+function shouldSkipVideo(): boolean {
+  if (typeof window === "undefined") return true;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true;
+  if (window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`).matches) return true;
+  const conn = (
+    navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }
+  ).connection;
+  if (conn?.saveData) return true;
+  if (conn?.effectiveType === "slow-2g" || conn?.effectiveType === "2g") {
+    return true;
+  }
+  return false;
+}
 
 function waitToPlay(video: HTMLVideoElement, src: string): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -41,16 +58,32 @@ function waitToPlay(video: HTMLVideoElement, src: string): Promise<void> {
   });
 }
 
+function StaticHeroBackground() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      <div className="absolute inset-0 bg-gradient-to-br from-accent-dark via-[#1a0a10] to-black" />
+      <div className="absolute inset-0 bg-gradient-to-r from-accent-dark/95 to-black/70" />
+    </div>
+  );
+}
+
 export default function HeroVideoBackground() {
   const videoA = useRef<HTMLVideoElement>(null);
   const videoB = useRef<HTMLVideoElement>(null);
   const indexRef = useRef(0);
   const frontIsA = useRef(true);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const [skipVideo, setSkipVideo] = useState(true);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches) return;
+    setSkipVideo(shouldSkipVideo());
+  }, []);
+
+  useEffect(() => {
+    if (skipVideo) return;
+
+    const videos = getHeroVideos();
+    if (videos.length === 0) return;
 
     const a = videoA.current;
     const b = videoB.current;
@@ -71,9 +104,9 @@ export default function HeroVideoBackground() {
     const swapToNext = async () => {
       if (cancelled) return;
 
-      for (let attempt = 0; attempt < HERO_VIDEOS.length; attempt++) {
-        indexRef.current = (indexRef.current + 1) % HERO_VIDEOS.length;
-        const src = HERO_VIDEOS[indexRef.current];
+      for (let attempt = 0; attempt < videos.length; attempt++) {
+        indexRef.current = (indexRef.current + 1) % videos.length;
+        const src = videos[indexRef.current];
         const next = back();
         const current = front();
 
@@ -98,10 +131,10 @@ export default function HeroVideoBackground() {
       a.style.opacity = "1";
       b.style.opacity = "0";
 
-      for (let attempt = 0; attempt < HERO_VIDEOS.length; attempt++) {
+      for (let attempt = 0; attempt < videos.length; attempt++) {
         indexRef.current = attempt;
         try {
-          await waitToPlay(a, HERO_VIDEOS[attempt]);
+          await waitToPlay(a, videos[attempt]);
           if (!cancelled) scheduleNext();
           return;
         } catch {
@@ -118,7 +151,9 @@ export default function HeroVideoBackground() {
       a.pause();
       b.pause();
     };
-  }, []);
+  }, [skipVideo]);
+
+  if (skipVideo) return <StaticHeroBackground />;
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
@@ -126,14 +161,14 @@ export default function HeroVideoBackground() {
         ref={videoA}
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 h-full w-full scale-105 object-cover opacity-100"
       />
       <video
         ref={videoB}
         muted
         playsInline
-        preload="auto"
+        preload="none"
         className="absolute inset-0 h-full w-full scale-105 object-cover opacity-0"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-accent-dark/95 to-black/70" />

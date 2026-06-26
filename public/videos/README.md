@@ -1,14 +1,26 @@
 # Hero background videos
 
-Add short looping clips here, then list them in `lib/heroVideos.ts`.
+Deployed clips (served to visitors):
 
-Suggested filenames (or rename to match your files in that config):
+- `hero-1.mp4` — 720p, ~1 MB
+- `hero-2.mp4` — 720p, ~0.7 MB
+- `hero-3.mp4` — 720p, ~0.7 MB
 
-- `hero-1.mp4`
-- `hero-2.mp4`
+**Total ~2.5 MB** (was ~144 MB of 4K originals).
 
-Tips:
+## Re-compress after adding new source footage
 
-- Keep each clip under ~15 seconds for a snappy rotation.
-- Use `.mp4` (H.264) for broad browser support.
-- Muted, ambient footage works best — the hero overlay keeps text readable.
+1. Drop source `.mp4` files in this folder
+2. Edit `scripts/compress-hero-videos.mjs` → `SOURCES` array
+3. Run: `npm run compress:videos`
+4. Move outputs from `compressed/` to this folder as `hero-1.mp4`, etc.
+
+## Host on a CDN instead of Vercel (optional)
+
+In Vercel → Environment Variables, set:
+
+```
+NEXT_PUBLIC_HERO_VIDEO_URLS=https://cdn.example.com/hero-1.mp4,https://cdn.example.com/hero-2.mp4,https://cdn.example.com/hero-3.mp4
+```
+
+Cheap options: Cloudflare R2, Bunny.net, Mux.
