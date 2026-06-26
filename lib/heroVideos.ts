@@ -1,11 +1,17 @@
 /**
- * Hero background clips. Defaults to local 720p files (~2.5 MB total).
+ * Hero background clips. Defaults to local 720p files (~2 MB total).
+ *
+ * Sources: 7224494 → hero-1, 8170481 → hero-2, 8425718 → hero-3
  *
  * Optional: set NEXT_PUBLIC_HERO_VIDEO_URLS in Vercel to comma-separated CDN URLs
  * (Cloudflare R2, Bunny.net, Mux, etc.) to serve video off Vercel entirely.
- *
- * Re-compress after swapping source files: npm run compress:videos
  */
+export const HERO_SOURCE_MAP = {
+  "hero-1.mp4": "7224494-uhd_3840_2160_25fps.mp4",
+  "hero-2.mp4": "8170481-uhd_3840_2160_25fps.mp4",
+  "hero-3.mp4": "8425718-uhd_3840_2160_25fps.mp4",
+} as const;
+
 const LOCAL_HERO_VIDEOS = [
   "/videos/hero-1.mp4",
   "/videos/hero-2.mp4",

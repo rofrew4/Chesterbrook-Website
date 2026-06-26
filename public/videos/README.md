@@ -2,9 +2,9 @@
 
 Deployed clips (served to visitors):
 
-- `hero-1.mp4` — 720p, ~1 MB
-- `hero-2.mp4` — 720p, ~0.7 MB
-- `hero-3.mp4` — 720p, ~0.7 MB
+- `hero-1.mp4` — from `7224494` (~606 KB)
+- `hero-2.mp4` — from `8170481` (~679 KB)
+- `hero-3.mp4` — from `8425718` (~726 KB)
 
 **Total ~2.5 MB** (was ~144 MB of 4K originals).
 
