@@ -29,7 +29,7 @@ export default function Hero() {
 
         <FadeIn delay={0.1}>
           <p className="mt-8 max-w-[480px] text-[18px] leading-relaxed text-white/85">
-            More deals, more time. Custom fit to your business.
+            Custom software fit to your business.
           </p>
         </FadeIn>
 
