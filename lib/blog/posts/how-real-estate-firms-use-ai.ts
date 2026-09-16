@@ -36,7 +36,7 @@ export const howFirmsUseAiPost: BlogPost = {
         {
           type: "ul",
           items: [
-            "**Off-market identification.** Public records — county assessor data, clerk of court filings, zoning and land use layers, tax status — contain motivation signals that never appear on a listing platform. Ownership structures, transfer history, liens, and permit activity can be assembled into a screening pipeline that surfaces owners worth a call before the property ever goes to market. Most firms pay for a comp network and ignore this layer entirely. It's covered in [the public data no one in CRE actually uses](/blog/public-cre-data-no-one-uses).",
+            "**Off-market identification.** Public records — county assessor data, clerk of court filings, zoning and land use layers, tax status — contain motivation signals that never appear on a listing platform. Ownership structures, transfer history, liens, and permit activity can be assembled into a screening pipeline that surfaces owners worth a call before the property ever goes to market. Most firms pay for a comp network and ignore this layer entirely — it's the most common gap Chesterbrook finds in a sourcing operation. It's covered in [the public data no one in CRE actually uses](/blog/public-cre-data-no-one-uses).",
             "**Buy box screening at volume.** A screening engine applies your actual criteria — size, zoning, submarket, tenancy, age, ownership type — across thousands of parcels continuously, rather than an analyst applying them across a few dozen when someone remembers to. The output is a ranked list, not a database dump.",
             "**Inbound deal normalization.** Broker emails, CRM entries, and blind PDFs arrive in a dozen formats. AI normalizes them into one queue, dedupes against what you've already seen, enriches with data you have, and scores against your criteria. Firms that do this stop losing deals in an inbox.",
             "**Owner contact resolution.** Turning an LLC on a deed into a human with a phone number is a research task that used to eat analyst days. It's now an on-demand lookup.",
@@ -85,7 +85,7 @@ export const howFirmsUseAiPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "The highest-volume category, and the one with the clearest daily payback. Maintenance intake and triage, inbound tenant and prospect communication, vendor coordination, monthly owner reporting, and review monitoring are all running in production today. This segment is covered in depth in [AI for property management](/blog/ai-for-property-management).",
+          text: "The highest-volume category, and the one with the clearest daily payback. Maintenance intake and triage, inbound tenant and prospect communication, vendor coordination, monthly owner reporting, and review monitoring are all running in production today, and together they make up the largest share of what Chesterbrook builds. This segment is covered in depth in [AI for property management](/blog/ai-for-property-management).",
         },
         {
           type: "p",
@@ -136,7 +136,7 @@ export const howFirmsUseAiPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "Four things, consistently, and none of them are about which model or platform anyone chose.",
+          text: "Four things, consistently, across the engagements Chesterbrook has run — and none of them are about which model or platform anyone chose.",
         },
         {
           type: "ul",

@@ -22,7 +22,7 @@ export const willAiReplaceJobsPost: BlogPost = {
   intro: [
     "Short answer: no, and the way that answer is usually delivered is too comfortable to be useful.",
     "\"AI won't replace you, someone using AI will\" is a slogan, not an analysis. It's also mostly aimed at making the reader feel fine. The more useful version is specific: certain tasks inside these roles are moving, some of them substantially, and which tasks those are determines what the job becomes and how many people you need doing it.",
-    "Here's the honest version, role by role, based on what the software actually being deployed in this industry does and doesn't do.",
+    "Here's the honest version, role by role, based on what the software Chesterbrook builds for this industry actually does and doesn't do.",
   ],
   sections: [
     {
@@ -91,7 +91,7 @@ export const willAiReplaceJobsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "This is the uncomfortable part, so let's be direct about it. A large share of the traditional analyst week — populating models from documents, abstracting leases, assembling comp sets, building diligence checklists, formatting investment memos, chasing down owner information — is exactly the structured, repetitive, text-heavy work that moves first. Lease abstraction alone was a substantial analyst workload and is now largely a software function.",
+          text: "This is the uncomfortable part, so let's be direct about it. A large share of the traditional analyst week — populating models from documents, abstracting leases, assembling comp sets, building diligence checklists, formatting investment memos, chasing down owner information — is exactly the structured, repetitive, text-heavy work that moves first. Lease abstraction alone was a substantial analyst workload and is now largely a software function — it's among the most common things Chesterbrook is asked to build.",
         },
         {
           type: "p",
@@ -143,7 +143,7 @@ export const willAiReplaceJobsPost: BlogPost = {
           items: [
             "**The exposure is task-level, not title-level.** Audit your own week. If most of it is intake, extraction, lookup, and drafting, that's where the pressure is. If most of it is deciding, negotiating, and being accountable, you're fine.",
             "**The training pipeline is the unsolved problem.** Junior work is what moved first, and junior work is how judgment got built. Firms need a deliberate answer to this, and most don't have one.",
-            "**The gap is opening at the firm level, not just the individual level.** The advantage isn't going to firms with the best AI. It's going to firms that finished one workflow and put it in production while competitors were still evaluating platforms.",
+            "**The gap is opening at the firm level, not just the individual level.** The advantage isn't going to firms with the best AI. It's going to firms that finished one workflow and put it in production while competitors were still evaluating platforms. That divide is the clearest pattern Chesterbrook sees across client work.",
             "**Verification becomes a core skill.** When first drafts are free, the valuable capability is knowing what's wrong with one. That's a judgment skill and it's learnable.",
           ],
         },

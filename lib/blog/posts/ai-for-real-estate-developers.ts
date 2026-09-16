@@ -49,11 +49,11 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
         },
         {
           type: "p",
-          text: "The output that matters isn't a map. It's a ranked, scored list of parcels that fit your criteria, with owner contact information attached, refreshed on a schedule. Most developers are doing a version of this manually and it's costing someone a substantial share of their week.",
+          text: "The output that matters isn't a map. It's a ranked, scored list of parcels that fit your criteria, with owner contact information attached, refreshed on a schedule. It's the application Chesterbrook is asked to build most often in development, because most developers are doing a version of it manually and it's costing someone a substantial share of their week.",
         },
         {
           type: "p",
-          text: "The main thing to understand about cost here is that geography drives it more than functionality. A single county is inexpensive because the data is public and the ingestion is one-time. Multi-state coverage means licensed data providers and a materially different budget. Narrow beats broad at the start.",
+          text: "The main thing to understand about cost here is that geography drives it more than functionality. A single county is inexpensive because the data is public and the ingestion is one-time. Multi-state coverage means licensed data providers and a materially different budget.",
         },
       ],
     },
@@ -76,7 +76,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "This is the most underexploited application in development, and the one almost nobody has built.",
+          text: "This is the most underexploited application in development, and the one Chesterbrook sees almost nobody building.",
         },
         {
           type: "p",
@@ -144,7 +144,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
     {
       heading: "What a developer should build first",
       blocks: [
-        { type: "p", text: "The sequence that works for most development shops:" },
+        { type: "p", text: "The sequence Chesterbrook recommends for most development shops:" },
         {
           type: "ol",
           items: [

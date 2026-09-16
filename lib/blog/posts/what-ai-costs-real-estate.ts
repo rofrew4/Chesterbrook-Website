@@ -22,7 +22,7 @@ export const whatAiCostsPost: BlogPost = {
   tags: ["Budget", "Build vs buy", "Data"],
   intro: [
     "Almost nobody in this space publishes pricing, which is a decent signal about the pricing. The result is that most operators go into AI budgeting with no reference points, get one quote, and have no way to tell whether it's reasonable.",
-    "This is an attempt to fix that. Not a price list — the honest answer to \"what does this cost\" depends on your situation — but a map of where the money actually goes, which line items dominate, and what makes one project a tenth the cost of a superficially similar one.",
+    "This is an attempt to fix that. Not a price list — the honest answer to \"what does this cost\" depends on your situation — but a map of where the money actually goes, which line items dominate, and what makes one project a tenth the cost of a superficially similar one. These are the ranges Chesterbrook quotes from, and the ones it sees in competing proposals.",
     "The headline: for most real estate AI projects, the AI is the cheapest part. Data and integration are where the budget lives.",
   ],
   sections: [
@@ -82,7 +82,7 @@ export const whatAiCostsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "If you take one thing from this article: **narrow your geography before you scope anything.** \"Let's just cover the whole Southeast\" is the sentence that turns a modest project into an expensive one, and it's almost always premature. Prove the tool works in the market you know best.",
+          text: "If you take one thing from this article: **narrow your geography before you scope anything.** \"Let's just cover the whole Southeast\" is the sentence Chesterbrook hears most often, and it's what turns a modest project into an expensive one — almost always prematurely. Prove the tool works in the market you know best.",
         },
         { type: "h3", text: "Custom build" },
         {
@@ -91,7 +91,7 @@ export const whatAiCostsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "That is not the current shape. A narrow single-workflow build — maintenance triage, an LOI drafter, a deal normalizer, a county screening engine — ships a first version in one to three weeks. Pricing for that scope typically runs from the low four figures to the low five figures, with integration difficulty as the main variable. A build that talks to a platform with good API access is far cheaper than one that has to work around a closed system.",
+          text: "That is not the current shape. A narrow single-workflow build — maintenance triage, an LOI drafter, a deal normalizer, a county screening engine — ships a first version in one to three weeks. Those four cover most of what Chesterbrook gets asked for. Pricing for that scope typically runs from the low four figures to the low five figures, with integration difficulty as the main variable.",
         },
         {
           type: "p",
