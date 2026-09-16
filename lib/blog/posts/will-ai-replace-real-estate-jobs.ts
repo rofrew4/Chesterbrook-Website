@@ -5,7 +5,7 @@ export const willAiReplaceJobsPost: BlogPost = {
   title: "Will AI replace property managers, brokers, and analysts?",
   subtitle: "A specific answer, role by role, about which work actually moves.",
   description:
-    "An honest role-by-role answer on whether AI will replace property managers, brokers, analysts, and leasing agents in commercial real estate — which tasks move first, which don't, and what the jobs become.",
+    "An honest role-by-role answer on whether AI will replace property managers, brokers, analysts, and leasing agents in commercial real estate: which tasks move first, which don't, and what the jobs become.",
   publishedAt: "2026-09-22",
   keywords: [
     "will AI replace property managers",
@@ -60,7 +60,7 @@ export const willAiReplaceJobsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "What the job becomes: fewer managers doing more doors, with time redistributed toward exceptions, relationships, and oversight. A manager who currently handles a certain number of properties will handle meaningfully more, and the work will feel different — less queue-clearing, more decisions. That's a headcount effect at the portfolio level even though no individual role disappears.",
+          text: "What the job becomes: fewer managers doing more doors, with time redistributed toward exceptions, relationships, and oversight. A manager who currently handles a certain number of properties will handle meaningfully more, and the work will feel different: less queue-clearing, more decisions. That's a headcount effect at the portfolio level even though no individual role disappears.",
         },
       ],
     },
@@ -91,7 +91,7 @@ export const willAiReplaceJobsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "This is the uncomfortable part, so let's be direct about it. A large share of the traditional analyst week — populating models from documents, abstracting leases, assembling comp sets, building diligence checklists, formatting investment memos, chasing down owner information — is exactly the structured, repetitive, text-heavy work that moves first. Lease abstraction alone was a substantial analyst workload and is now largely a software function — it's among the most common things Chesterbrook AI is asked to build.",
+          text: "This is the uncomfortable part, so let's be direct about it. A large share of the traditional analyst week is exactly the structured, repetitive, text-heavy work that moves first: populating models from documents, abstracting leases, assembling comp sets, building diligence checklists, formatting investment memos, chasing down owner information. Lease abstraction alone was a substantial analyst workload and is now largely a software function, and among the most common things Chesterbrook AI is asked to build.",
         },
         {
           type: "p",
@@ -99,7 +99,7 @@ export const willAiReplaceJobsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "What the job becomes: fewer analysts per deal, and the ones who remain move up the value chain faster. The entry-level analyst seat as a volume-of-grunt-work apprenticeship is genuinely shrinking — which creates a real training problem the industry hasn't solved, since that grunt work was how people learned. Firms that figure out how to develop judgment without the traditional apprenticeship will have an advantage.",
+          text: "What the job becomes: fewer analysts per deal, and the ones who remain move up the value chain faster. The entry-level analyst seat as a volume-of-grunt-work apprenticeship is genuinely shrinking, which creates a real training problem the industry hasn't solved, since that grunt work was how people learned. Firms that figure out how to develop judgment without the traditional apprenticeship will have an advantage.",
         },
       ],
     },
@@ -130,7 +130,7 @@ export const willAiReplaceJobsPost: BlogPost = {
         { type: "p", text: "**Not replaced. Meaningfully augmented.**" },
         {
           type: "p",
-          text: "Screening, sourcing research, entitlement monitoring, and diligence triage all move. The relationship with a seller, the read on a market, the decision to commit capital, and the negotiation do not. Deal sourcing is the area where AI has changed outcomes most, and it changes them by surfacing opportunities a team wouldn't have found — which grows the top of the funnel rather than shrinking the team.",
+          text: "Screening, sourcing research, entitlement monitoring, and diligence triage all move. The relationship with a seller, the read on a market, the decision to commit capital, and the negotiation do not. Deal sourcing is the area where AI has changed outcomes most, and it changes them by surfacing opportunities a team wouldn't have found, which grows the top of the funnel rather than shrinking the team.",
         },
       ],
     },
@@ -154,7 +154,7 @@ export const willAiReplaceJobsPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "Chesterbrook AI is a consulting and software firm based in McLean, Virginia, building the software that absorbs this category of work — email agents, lease abstraction, deal sourcing engines, custom CRMs, and internal tooling for property managers, brokers, and developers.",
+          text: "Chesterbrook AI is a consulting and software firm based in McLean, Virginia, building the software that absorbs this category of work: email agents, lease abstraction, deal sourcing engines, custom CRMs, and internal tooling for property managers, brokers, and developers.",
         },
         {
           type: "p",
@@ -162,7 +162,7 @@ export const willAiReplaceJobsPost: BlogPost = {
         },
         {
           type: "p",
-          text: "Engagements start with discovery — walking through operations to find where the hours are actually going — then a roadmap, then a build. Clients own the finished software.",
+          text: "Engagements start with discovery, walking through operations to find where the hours are actually going, then a roadmap, then a build. Clients own the finished software.",
         },
         {
           type: "p",

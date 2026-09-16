@@ -5,7 +5,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
   title: "AI for real estate developers",
   subtitle: "Where it fits across a development cycle measured in years, not weeks.",
   description:
-    "How real estate developers use AI across site selection, feasibility, entitlement tracking, and construction administration — what works, what doesn't, and where the data actually comes from.",
+    "How real estate developers use AI across site selection, feasibility, entitlement tracking, and construction administration, including what works, what doesn't, and where the data actually comes from.",
   publishedAt: "2026-09-20",
   keywords: [
     "AI for real estate developers",
@@ -40,11 +40,11 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
         {
           type: "ul",
           items: [
-            "**Parcel and assessor data** — ownership, acreage, assessed value, building age, land use classification, transfer history.",
-            "**Zoning and future land use** — current entitlements and what the comprehensive plan contemplates, which is where the interesting gap lives. The parcel zoned one way today and planned for another tomorrow is the one worth a call.",
-            "**Environmental and overlay constraints** — floodplain, wetlands, coastal and hazard overlays, historic districts. These are usually what kills a site, so screening them early is where the time savings compound.",
-            "**Utility and infrastructure availability** — sewer and water service areas, capacity constraints, planned extensions.",
-            "**Ownership and motivation signals** — how long an owner has held, whether the entity looks like a long-term holder or a tired one, whether there's distress in the public record.",
+            "**Parcel and assessor data.** Ownership, acreage, assessed value, building age, land use classification, transfer history.",
+            "**Zoning and future land use.** Current entitlements and what the comprehensive plan contemplates, which is where the interesting gap lives. The parcel zoned one way today and planned for another tomorrow is the one worth a call.",
+            "**Environmental and overlay constraints.** Floodplain, wetlands, coastal and hazard overlays, historic districts. These are usually what kills a site, so screening them early is where the time savings compound.",
+            "**Utility and infrastructure availability.** Sewer and water service areas, capacity constraints, planned extensions.",
+            "**Ownership and motivation signals.** How long an owner has held, whether the entity looks like a long-term holder or a tired one, whether there's distress in the public record.",
           ],
         },
         {
@@ -80,7 +80,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
         },
         {
           type: "p",
-          text: "Entitlement information is public, scheduled, and published — planning commission agendas, city council packets, board of adjustment minutes, permit portals, notices of commencement. It's also scattered across dozens of municipal websites in inconsistent formats, published on nobody's convenient schedule, and read by essentially no one systematically.",
+          text: "Entitlement information is public, scheduled, and published: planning commission agendas, city council packets, board of adjustment minutes, permit portals, notices of commencement. It's also scattered across dozens of municipal websites in inconsistent formats, published on nobody's convenient schedule, and read by essentially no one systematically.",
         },
         {
           type: "p",
@@ -90,7 +90,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
           type: "ul",
           items: [
             "**Approval activity on parcels in your pipeline**, without someone manually refreshing a portal.",
-            "**Competitor project movement** — who filed what, where, and at what stage.",
+            "**Competitor project movement.** Who filed what, where, and at what stage.",
             "**Upstream demand signals** in meeting minutes: institutional site searches, infrastructure programs, and other public decisions that foreshadow where demand is heading, often months before it's visible any other way.",
             "**Your own application status** across multiple jurisdictions in one place.",
           ],
@@ -108,10 +108,10 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
         {
           type: "ul",
           items: [
-            "**RFI and submittal triage** — classification, routing, and tracking against schedule.",
-            "**Change order summarization** — what changed, what it costs, how it compares to the contract.",
-            "**Draw package assembly** — a repetitive document assembly and reconciliation task with a predictable shape.",
-            "**Meeting notes into action items** — OAC minutes turned into tracked, assigned tasks rather than a document nobody reopens.",
+            "**RFI and submittal triage.** Classification, routing, and tracking against schedule.",
+            "**Change order summarization.** What changed, what it costs, how it compares to the contract.",
+            "**Draw package assembly.** A repetitive document assembly and reconciliation task with a predictable shape.",
+            "**Meeting notes into action items.** OAC minutes turned into tracked, assigned tasks rather than a document nobody reopens.",
           ],
         },
       ],
@@ -161,7 +161,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "Chesterbrook AI is a consulting and software firm based in McLean, Virginia, building custom tooling for developers, property managers, and brokers — parcel and site screening engines, public record monitoring, and document workflows.",
+          text: "Chesterbrook AI is a consulting and software firm based in McLean, Virginia, building custom tooling for developers, property managers, and brokers: parcel and site screening engines, public record monitoring, and document workflows.",
         },
         {
           type: "p",

@@ -5,7 +5,7 @@ export const howFirmsUseAiPost: BlogPost = {
   title: "How real estate firms are actually using AI",
   subtitle: "What's in production, what's still a demo, and how the gap is widening.",
   description:
-    "A function-by-function look at how commercial real estate firms use AI in 2026 — deal sourcing, underwriting, lease abstraction, property operations, and investor reporting — and which use cases are genuinely in production.",
+    "A function-by-function look at how commercial real estate firms use AI in 2026, from deal sourcing and underwriting to lease abstraction, property operations, and investor reporting, and which use cases are genuinely in production.",
   publishedAt: "2026-09-16",
   keywords: [
     "AI in real estate",
@@ -36,8 +36,8 @@ export const howFirmsUseAiPost: BlogPost = {
         {
           type: "ul",
           items: [
-            "**Off-market identification.** Public records — county assessor data, clerk of court filings, zoning and land use layers, tax status — contain motivation signals that never appear on a listing platform. Ownership structures, transfer history, liens, and permit activity can be assembled into a screening pipeline that surfaces owners worth a call before the property ever goes to market. Most firms pay for a comp network and ignore this layer entirely — it's the most common gap Chesterbrook AI finds in a sourcing operation. It's covered in [the public data no one in CRE actually uses](/blog/public-cre-data-no-one-uses).",
-            "**Buy box screening at volume.** A screening engine applies your actual criteria — size, zoning, submarket, tenancy, age, ownership type — across thousands of parcels continuously, rather than an analyst applying them across a few dozen when someone remembers to. The output is a ranked list, not a database dump.",
+            "**Off-market identification.** Public records (county assessor data, clerk of court filings, zoning and land use layers, tax status) contain motivation signals that never appear on a listing platform. Ownership structures, transfer history, liens, and permit activity can be assembled into a screening pipeline that surfaces owners worth a call before the property ever goes to market. Most firms pay for a comp network and ignore this layer entirely; it's the most common gap Chesterbrook AI finds in a sourcing operation. It's covered in [the public data no one in CRE actually uses](/blog/public-cre-data-no-one-uses).",
+            "**Buy box screening at volume.** A screening engine applies your actual criteria (size, zoning, submarket, tenancy, age, ownership type) across thousands of parcels continuously, rather than an analyst applying them across a few dozen when someone remembers to. The output is a ranked list, not a database dump.",
             "**Inbound deal normalization.** Broker emails, CRM entries, and blind PDFs arrive in a dozen formats. AI normalizes them into one queue, dedupes against what you've already seen, enriches with data you have, and scores against your criteria. Firms that do this stop losing deals in an inbox.",
             "**Owner contact resolution.** Turning an LLC on a deed into a human with a phone number is a research task that used to eat analyst days. It's now an on-demand lookup.",
           ],
@@ -67,7 +67,7 @@ export const howFirmsUseAiPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "Brokerage adoption is the most uneven of any segment — some shops are running sophisticated workflows and others are entirely untouched.",
+          text: "Brokerage adoption is the most uneven of any segment: some shops are running sophisticated workflows and others are entirely untouched.",
         },
         {
           type: "ul",
@@ -89,7 +89,7 @@ export const howFirmsUseAiPost: BlogPost = {
         },
         {
           type: "p",
-          text: "The constraint in this category is rarely capability. It's integration — how accessible your property management platform is to outside software — and whether the reference information about your buildings exists anywhere an automated system can reach.",
+          text: "The constraint in this category is rarely capability. It's integration, meaning how accessible your property management platform is to outside software, and whether the reference information about your buildings exists anywhere an automated system can reach.",
         },
       ],
     },
@@ -105,7 +105,7 @@ export const howFirmsUseAiPost: BlogPost = {
           items: [
             "**Site identification and feasibility screening** against zoning, land use, utility, and environmental constraints.",
             "**Entitlement and approval tracking** across municipal meeting agendas, minutes, and permit systems.",
-            "**Construction administration** — RFI and submittal triage, change order summarization, draw package assembly.",
+            "**Construction administration**: RFI and submittal triage, change order summarization, draw package assembly.",
           ],
         },
         {
@@ -125,7 +125,7 @@ export const howFirmsUseAiPost: BlogPost = {
           type: "ul",
           items: [
             "**Investor reporting.** Quarterly letters, capital account summaries, and LP updates involve assembling the same narrative around different numbers every period. The narrative layer drafts well.",
-            "**Lease administration.** Critical date tracking, option windows, escalation triggers — obligations that are expensive to miss and tedious to monitor.",
+            "**Lease administration.** Critical date tracking, option windows, escalation triggers, obligations that are expensive to miss and tedious to monitor.",
             "**Portfolio question answering.** Natural-language questions across your own lease library, budgets, and reporting, answered from your actual documents rather than someone's recollection.",
           ],
         },
@@ -136,7 +136,7 @@ export const howFirmsUseAiPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "Four things, consistently, across the engagements Chesterbrook AI has run — and none of them are about which model or platform anyone chose.",
+          text: "Four things, consistently, across the engagements Chesterbrook AI has run, and none of them are about which model or platform anyone chose.",
         },
         {
           type: "ul",
@@ -175,7 +175,7 @@ export const howFirmsUseAiPost: BlogPost = {
         },
         {
           type: "p",
-          text: "Engagements generally begin with a discovery period — calls with the team, a walkthrough of day-to-day operations, a review of existing data — and produce a roadmap of what to automate and in what sequence. From there the work splits between training staff on tools that already exist and building custom software for the parts that need it. Clients own everything built for them.",
+          text: "Engagements generally begin with a discovery period: calls with the team, a walkthrough of day-to-day operations, a review of existing data. That produces a roadmap of what to automate and in what sequence. From there the work splits between training staff on tools that already exist and building custom software for the parts that need it. Clients own everything built for them.",
         },
         {
           type: "p",
@@ -188,7 +188,7 @@ export const howFirmsUseAiPost: BlogPost = {
     {
       question: "What is the most common AI use case in commercial real estate?",
       answer:
-        "Document extraction — lease abstraction and structured data pulled from PDFs — is the most widely deployed, followed by inbound communication handling and deal sourcing from public records.",
+        "Document extraction, meaning lease abstraction and structured data pulled from PDFs, is the most widely deployed, followed by inbound communication handling and deal sourcing from public records.",
     },
     {
       question: "Do real estate firms build AI tools or buy them?",

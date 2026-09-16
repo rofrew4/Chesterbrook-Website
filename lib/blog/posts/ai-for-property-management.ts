@@ -5,7 +5,7 @@ export const aiForPropertyManagementPost: BlogPost = {
   title: "AI for property management, and what it actually handles today",
   subtitle: "A clear-eyed look at the work AI takes off your team's plate.",
   description:
-    "What AI actually does for property management teams in 2026 — maintenance triage, leasing communication, reporting, and reputation monitoring — plus where a human still needs to stay in the loop.",
+    "What AI actually does for property management teams in 2026, from maintenance triage and leasing communication to reporting and reputation monitoring, plus where a human still needs to stay in the loop.",
   publishedAt: "2026-09-16",
   keywords: [
     "AI for property management",
@@ -21,7 +21,7 @@ export const aiForPropertyManagementPost: BlogPost = {
   visual: "operations-queue",
   tags: ["Operations", "Leasing", "Maintenance"],
   intro: [
-    "Property management is the part of real estate where AI has the clearest business case and the most confused market. The business case is obvious: property management runs on repetitive, text-heavy, high-volume work — maintenance requests, tenant emails, vendor coordination, renewal notices, monthly reporting. That is exactly the shape of work language models handle well.",
+    "Property management is the part of real estate where AI has the clearest business case and the most confused market. The business case is obvious: property management runs on repetitive, text-heavy, high-volume work: maintenance requests, tenant emails, vendor coordination, renewal notices, monthly reporting. That is exactly the shape of work language models handle well.",
     "The confusion comes from everything being marketed at once. Every platform in the category shipped an AI feature in the last eighteen months, most of them narrow, and the pitches make it genuinely hard to tell what's working in production from what's working in a demo.",
     "This is a plain read on where AI is actually pulling weight in property management right now, what it takes to get there, and the three places a human still belongs in the loop.",
   ],
@@ -37,7 +37,7 @@ export const aiForPropertyManagementPost: BlogPost = {
           type: "ul",
           items: [
             "**Maintenance intake and triage.** A tenant emails a description of a problem in whatever words they happen to use. AI reads it, classifies the issue type, assesses urgency, identifies the property and unit, and drafts a work order in the format your system expects. The gain isn't just speed — it's consistency. The same issue described five different ways gets categorized the same way every time, which is something human intake almost never achieves across a team.",
-            "**Tenant and prospect communication.** Routine inbound — tour requests, application questions, rent payment confusion, lease clause questions, move-out logistics — follows recognizable patterns. AI reads inbound mail, classifies intent, drafts a reply in your voice, and escalates anything outside the pattern. Most teams find that a large majority of inbound volume is routine and a meaningful minority genuinely isn't. Handling the routine portion well frees your people for the rest.",
+            "**Tenant and prospect communication.** Routine inbound (tour requests, application questions, rent payment confusion, lease clause questions, move-out logistics) follows recognizable patterns. AI reads inbound mail, classifies intent, drafts a reply in your voice, and escalates anything outside the pattern. Most teams find that a large majority of inbound volume is routine and a meaningful minority genuinely isn't. Handling the routine portion well frees your people for the rest.",
             "**Document extraction.** Leases, estoppels, insurance certificates, vendor contracts, and inspection reports contain structured information trapped in unstructured formats. Extraction pulls it into the spreadsheet or database format your team already uses. This is the single most mature AI capability in real estate and the one where the gap between AI and specialized legacy tools has closed fastest.",
             "**Reporting and summarization.** Monthly owner reports, variance narratives, portfolio rollups, and board packages involve a lot of assembling and describing. AI drafts the narrative layer around numbers your system already produces, so the reporting cycle stops consuming the first week of every month.",
             "**Reputation and review monitoring.** Reviews and listing feedback arrive across a scattered set of sources and nobody reads all of them. Classification and a scheduled digest turn that into something one person can act on in ten minutes a week, with genuine issues surfaced rather than buried.",
@@ -55,7 +55,7 @@ export const aiForPropertyManagementPost: BlogPost = {
         {
           type: "ul",
           items: [
-            "**The information has to exist somewhere.** AI reasons over what you've recorded. If your team's knowledge about a building lives in people's heads or in a folder nobody has opened in two years, the AI can't reach it. Capturing that reference information — equipment and systems detail, vendor terms, standing instructions per property — is usually the first thing Chesterbrook AI scopes in a property management engagement, because it's the layer that makes every downstream answer specific instead of generic.",
+            "**The information has to exist somewhere.** AI reasons over what you've recorded. If your team's knowledge about a building lives in people's heads or in a folder nobody has opened in two years, the AI can't reach it. Capturing that reference information, meaning equipment and systems detail, vendor terms, and standing instructions per property, is usually the first thing Chesterbrook AI scopes in a property management engagement, because it's the layer that makes every downstream answer specific instead of generic.",
             "**It has to reach your systems.** Yardi, AppFolio, Buildium, MRI, RealPage and the regional platforms vary enormously in how accessible they are to outside software. Some have solid APIs. Some have partial ones. Some have essentially none and require a different integration approach entirely. This is worth confirming before scoping anything, because it's the most common reason an otherwise sound project stalls.",
             "**The output has to land where the work already happens.** An AI tool that lives in its own tab is a tool your team will stop opening in three weeks. The deployments that stick put the output in Outlook, Gmail, Slack, or directly into the PMS, so nobody has to change where they work to get the benefit.",
           ],
@@ -71,7 +71,7 @@ export const aiForPropertyManagementPost: BlogPost = {
         },
         {
           type: "p",
-          text: "**Final approval on anything that becomes a record.** A work order becomes a maintenance history. A maintenance history gets read in a habitability dispute, an insurance claim, or a sale diligence package. A leasing decision touches fair housing. Every system Chesterbrook AI has shipped in this category works the same way — AI drafts, a person approves — not because the drafting is unreliable, but because accountability for a record can't be delegated to software. The approval step takes seconds when the draft is good, and it's the thing that makes the whole system defensible.",
+          text: "**Final approval on anything that becomes a record.** A work order becomes a maintenance history. A maintenance history gets read in a habitability dispute, an insurance claim, or a sale diligence package. A leasing decision touches fair housing. Every system Chesterbrook AI has shipped in this category works the same way: AI drafts, a person approves. Not because the drafting is unreliable, but because accountability for a record can't be delegated to software. The approval step takes seconds when the draft is good, and it's the thing that makes the whole system defensible.",
         },
         {
           type: "p",
@@ -88,7 +88,7 @@ export const aiForPropertyManagementPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "Start with the workflow that is most repetitive, not the one that is most painful. The most painful workflow is usually painful because it involves judgment, exceptions, and stakeholders — which is to say it's the worst possible first project. The most repetitive one is where you get a clean win, build internal trust, and learn what your own data actually looks like.",
+          text: "Start with the workflow that is most repetitive, not the one that is most painful. The most painful workflow is usually painful because it involves judgment, exceptions, and stakeholders, which is to say it's the worst possible first project. The most repetitive one is where you get a clean win, build internal trust, and learn what your own data actually looks like.",
         },
         {
           type: "p",
@@ -117,7 +117,7 @@ export const aiForPropertyManagementPost: BlogPost = {
         },
         {
           type: "p",
-          text: "A single narrow workflow — maintenance triage, inbound email handling, a reporting assistant — is typically a matter of weeks, not months, with a working demo inside the first week. Projects that touch a platform with good API access are meaningfully cheaper than ones that require working around a closed system. Ongoing costs are usually modest and driven by API usage and whatever data sources the workflow depends on.",
+          text: "A single narrow workflow (maintenance triage, inbound email handling, a reporting assistant) is typically a matter of weeks, not months, with a working demo inside the first week. Projects that touch a platform with good API access are meaningfully cheaper than ones that require working around a closed system. Ongoing costs are usually modest and driven by API usage and whatever data sources the workflow depends on.",
         },
         {
           type: "p",
@@ -134,7 +134,7 @@ export const aiForPropertyManagementPost: BlogPost = {
         },
         {
           type: "p",
-          text: "If your core platform is genuinely serving you — accounting, compliance, ledgers, banking integrations — AI isn't a reason to replace it. The opportunity is almost never in the system of record. It's in the workflows your team built around the system of record over years of duct tape, the ones the platform never actually powered.",
+          text: "If your core platform is genuinely serving you on accounting, compliance, ledgers, and banking integrations, AI isn't a reason to replace it. The opportunity is almost never in the system of record. It's in the workflows your team built around the system of record over years of duct tape, the ones the platform never actually powered.",
         },
         {
           type: "p",

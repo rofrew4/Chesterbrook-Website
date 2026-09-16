@@ -20,28 +20,28 @@ export const creAiPost: BlogPost = {
   readingTimeMinutes: 11,
   visual: "ai-stages",
   intro: [
-    "Every AI vendor pitching CRE right now wants to sell you a platform. Most operators I talk to are paralyzed by where to start, and the platforms aren't actually the answer — at least not first. This is the sequence we walk new clients through when they're trying to figure out where to begin and what's worth committing to.",
+    "Every AI vendor pitching CRE right now wants to sell you a platform. Most operators I talk to are paralyzed by where to start, and the platforms aren't actually the answer, at least not first. This is the sequence we walk new clients through when they're trying to figure out where to begin and what's worth committing to.",
     "It's not a list of tools. It's a way of thinking about the progression. Each stage has real value, and each stage has a ceiling that comes faster than most operators expect.",
   ],
   sections: [
     {
       heading: "The mindset shift, before anything else",
       paragraphs: [
-        "AI is not a product you buy. It is not a platform you log into. It is not a feature your existing software vendor sells you as a premium upgrade. AI is how the work gets done — and the operators getting real leverage from it are the ones who treat it that way.",
+        "AI is not a product you buy. It is not a platform you log into. It is not a feature your existing software vendor sells you as a premium upgrade. AI is how the work gets done, and the operators getting real leverage from it are the ones who treat it that way.",
         "The most expensive mistake we see at the starting line is signing an annual contract with an AI vendor before anyone on the team has spent a month using base AI on real workflows. You don't know what you actually need until you've felt the ceiling on the simple version. Start with experiments. Commitments come later.",
       ],
     },
     {
       heading: "Stage 1: the basics, and where they fall over",
       paragraphs: [
-        "A general-purpose AI tool — Claude, ChatGPT, similar — handles a real set of tasks well. It's where every operator should start. It's also where most operators overestimate what they're getting, which is why a clear-eyed view of the ceiling matters.",
+        "A general-purpose AI tool like Claude or ChatGPT handles a real set of tasks well. It's where every operator should start. It's also where most operators overestimate what they're getting, which is why a clear-eyed view of the ceiling matters.",
         "What it does well, used carefully:",
       ],
       list: [
-        "Document Q&A — Upload a lease, an OM, an inspection report, or a financial package and ask specific questions. It's faster than skimming and the answers are usually right — though usually is the operative word, and you should always verify on anything that matters.",
-        "Email drafting — Routine emails draft well. The 40% that require real judgment do not. Knowing the difference matters more than knowing the tool.",
-        "Market research — Useful for getting up to speed on a submarket you don't know. Not useful for anything where current data matters.",
-        "Spreadsheet and modeling help — Good for structural work, not for the actual numbers — never trust it on financial figures without verification.",
+        "Document Q&A. Upload a lease, an OM, an inspection report, or a financial package and ask specific questions. It's faster than skimming and the answers are usually right — though usually is the operative word, and you should always verify on anything that matters.",
+        "Email drafting. Routine emails draft well. The 40% that require real judgment do not. Knowing the difference matters more than knowing the tool.",
+        "Market research. Useful for getting up to speed on a submarket you don't know. Not useful for anything where current data matters.",
+        "Spreadsheet and modeling help. Good for structural work, not for the actual numbers; never trust it on financial figures without verification.",
       ],
     },
     {
@@ -59,7 +59,7 @@ export const creAiPost: BlogPost = {
     {
       heading: "Stage 2: light automation, and where it falls over too",
       paragraphs: [
-        "The next layer is workflow tools — Zapier, Make, n8n — connected to AI APIs. This unlocks scheduled tasks, triggered workflows, and light integration with the tools you already use.",
+        "The next layer is workflow tools like Zapier, Make, and n8n connected to AI APIs. This unlocks scheduled tasks, triggered workflows, and light integration with the tools you already use.",
         "What this unlocks: auto-logging broker emails into a deal tracker, pulling data on a schedule, drafting reply suggestions, routing classified inquiries, generating weekly summaries from new documents.",
         "These are real, useful, and worth doing. They're also general-purpose tools that have no idea what a lease is or what your portfolio looks like. You'll spend significant time configuring them, debugging them, and rebuilding them when APIs change.",
         "The honest framing on Stage 2: it's a meaningful upgrade from Stage 1, and it has its own ceiling. For some operators, Stage 2 is the right permanent home. For most who reach it, it becomes a stepping stone.",
@@ -72,7 +72,7 @@ export const creAiPost: BlogPost = {
       ],
       list: [
         "You're copy-pasting into a generic AI tool dozens of times a day.",
-        "You have data sources nobody else has — your lease library, deal flow, tenant communications — and none of it is being used by your AI workflows.",
+        "You have data sources nobody else has (your lease library, deal flow, tenant communications) and none of it is being used by your AI workflows.",
         "You have workflows with four or more steps that always run together.",
         "The outputs are generic because the AI doesn't know your business.",
         "When two of these are true, the math has flipped. The cost of staying on off-the-shelf exceeds the cost of custom.",
@@ -100,7 +100,7 @@ export const creAiPost: BlogPost = {
     },
     {
       paragraphs: [
-        "If you've worked through the stages above and you're seeing the signs in section four, that's the conversation we have with new clients. Reach out — we'll figure out whether you're actually ready for custom, or whether another quarter in Stage 1 is the right call for where you are.",
+        "If you've worked through the stages above and you're seeing the signs in section four, that's the conversation we have with new clients. Reach out and we'll figure out whether you're actually ready for custom, or whether another quarter in Stage 1 is the right call for where you are.",
       ],
     },
   ],
