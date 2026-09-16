@@ -5,6 +5,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { scrollToSection } from "@/lib/scroll";
 import { CALENDLY_URL } from "@/lib/links";
+import { SITE_NAME } from "@/lib/seo";
+import { BrandMark } from "./BrandMark";
 
 const sectionLinks = [
   { label: "Strategy", href: "strategy" },
@@ -68,11 +70,18 @@ export default function Nav() {
           <button
             type="button"
             onClick={handleTopNav}
-            className={`font-display text-[18px] tracking-tight transition-colors ${
+            aria-label={`${SITE_NAME} — back to top`}
+            className={`flex items-center gap-[5px] font-display text-[18px] tracking-tight transition-colors ${
               overDarkHero ? "text-white" : "text-foreground"
             }`}
           >
-            Chesterbrook
+            {/* 22px = 1.75x the 18px Fraunces cap height, matching the lockup spec */}
+            <BrandMark
+              className={`h-[22px] w-auto shrink-0 transition-colors ${
+                overDarkHero ? "text-white" : "text-accent"
+              }`}
+            />
+            <span>{SITE_NAME}</span>
           </button>
 
           <div className="hidden items-center gap-8 md:flex">
