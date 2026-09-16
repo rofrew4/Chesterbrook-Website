@@ -5,17 +5,24 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BlogArticleBody from "@/components/blog/BlogArticleBody";
 import BlogVisual from "@/components/blog/BlogVisual";
-import { BlogPostJsonLd } from "@/components/blog/BlogJsonLd";
 import {
-  blogPosts,
+  BlogFaqJsonLd,
+  BlogPostJsonLd,
+} from "@/components/blog/BlogJsonLd";
+import {
   getBlogPost,
   getBlogPostSlugs,
+  getRelatedPosts,
   siteUrl,
 } from "@/lib/blog";
 
 type PageProps = {
   params: { slug: string };
 };
+
+// Posts are staggered by `publishedAt`; revalidating lets the next one go
+// live on its date without a redeploy.
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return getBlogPostSlugs().map((slug) => ({ slug }));
@@ -52,10 +59,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 function formatDate(iso: string) {
+  // `iso` is date-only, so it parses as UTC midnight — format in UTC to avoid
+  // rendering the previous day in western timezones.
   return new Date(iso).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
@@ -63,11 +73,12 @@ export default function BlogPostPage({ params }: PageProps) {
   const post = getBlogPost(params.slug);
   if (!post) notFound();
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const related = getRelatedPosts(post);
 
   return (
     <>
       <BlogPostJsonLd post={post} />
+      <BlogFaqJsonLd post={post} />
       <Nav />
       <main className="scroll-mt-nav pt-28 md:pt-32">
         <article className="mx-auto max-w-[1200px] px-6 pb-20 md:px-10 md:pb-28">
@@ -93,6 +104,18 @@ export default function BlogPostPage({ params }: PageProps) {
               <p className="mt-4 text-[18px] leading-relaxed text-secondary">
                 {post.subtitle}
               </p>
+              {post.tags && post.tags.length > 0 && (
+                <ul className="mt-5 flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full border border-border px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-muted"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </header>
           </div>
 

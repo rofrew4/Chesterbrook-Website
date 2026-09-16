@@ -104,4 +104,8 @@ export const creAiPost: BlogPost = {
       ],
     },
   ],
+  related: [
+    "ai-for-property-management",
+    "what-ai-costs-real-estate",
+  ],
 };

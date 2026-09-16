@@ -2,7 +2,8 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/seo";
 
-export const dynamic = "force-static";
+// Matches the blog routes so staggered posts enter the sitemap on their date.
+export const revalidate = 3600;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = blogPosts.map((post) => ({

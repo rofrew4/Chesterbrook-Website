@@ -81,4 +81,8 @@ export const creSoftwarePost: BlogPost = {
       ],
     },
   ],
+  related: [
+    "what-ai-costs-real-estate",
+    "how-real-estate-firms-use-ai",
+  ],
 };

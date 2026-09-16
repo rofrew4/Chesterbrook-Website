@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   },
 };
 
+// Posts are staggered by `publishedAt`; revalidating lets the next one
+// appear on its date without a redeploy.
+export const revalidate = 3600;
+
 export default function BlogPage() {
   return (
     <>

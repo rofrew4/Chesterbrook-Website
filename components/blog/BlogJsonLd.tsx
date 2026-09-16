@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/blog";
+import { toPlainText } from "@/lib/blog/richText";
 import { SITE_URL } from "@/lib/seo";
 
 export function BlogListingJsonLd() {
@@ -51,6 +52,34 @@ export function BlogPostJsonLd({ post }: { post: BlogPost }) {
     about: post.keywords.slice(0, 3).map((keyword) => ({
       "@type": "Thing",
       name: keyword,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/**
+ * Only emitted when the post renders a visible "Common questions" block —
+ * marking up FAQs that aren't on the page is a manual action risk.
+ */
+export function BlogFaqJsonLd({ post }: { post: BlogPost }) {
+  if (!post.faq || post.faq.length === 0) return null;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: toPlainText(item.answer),
+      },
     })),
   };
 

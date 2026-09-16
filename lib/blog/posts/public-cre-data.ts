@@ -91,4 +91,8 @@ export const publicCreDataPost: BlogPost = {
       ],
     },
   ],
+  related: [
+    "ai-for-real-estate-developers",
+    "how-real-estate-firms-use-ai",
+  ],
 };

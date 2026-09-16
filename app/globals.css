@@ -97,6 +97,54 @@
     @apply pl-1;
   }
 
+  .blog-prose h3 {
+    @apply mb-3 mt-9 font-display text-[1.15rem] leading-snug tracking-tight text-foreground;
+  }
+
+  .blog-prose ol {
+    @apply mb-6 ml-5 list-decimal space-y-3;
+  }
+
+  .blog-prose a {
+    @apply text-accent underline decoration-accent/30 underline-offset-[3px] transition-colors duration-200 hover:decoration-accent;
+  }
+
+  .blog-table-wrap {
+    @apply mb-6 mt-2 overflow-x-auto rounded-xl border border-border;
+  }
+
+  .blog-prose table {
+    @apply w-full border-collapse text-left text-[15px];
+  }
+
+  .blog-prose th {
+    @apply border-b border-border bg-surface/60 px-4 py-3 text-[12px] font-medium uppercase tracking-[0.12em] text-muted;
+  }
+
+  .blog-prose td {
+    @apply border-b border-border/60 px-4 py-3 align-top leading-snug;
+  }
+
+  .blog-prose tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .blog-faq {
+    @apply mt-16 border-t border-border pt-10;
+  }
+
+  .blog-faq dt {
+    @apply mb-2 font-display text-[1.05rem] leading-snug tracking-tight text-foreground;
+  }
+
+  .blog-faq dl {
+    @apply space-y-7;
+  }
+
+  .blog-faq dd {
+    @apply text-[16px] leading-relaxed text-secondary;
+  }
+
   .blog-cta {
     @apply mt-14 rounded-2xl border border-accent/15 bg-widget px-6 py-8 text-center shadow-mockup md:px-10 md:py-10;
   }
