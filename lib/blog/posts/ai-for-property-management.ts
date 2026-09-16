@@ -31,7 +31,7 @@ export const aiForPropertyManagementPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "AI performs best on high-volume work where the input is unstructured text and the output has a predictable shape. Five categories fit that description, and every property management deployment Chesterbrook has built started in one of them.",
+          text: "AI performs best on high-volume work where the input is unstructured text and the output has a predictable shape. Five categories fit that description, and every property management deployment Chesterbrook AI has built started in one of them.",
         },
         {
           type: "ul",
@@ -55,7 +55,7 @@ export const aiForPropertyManagementPost: BlogPost = {
         {
           type: "ul",
           items: [
-            "**The information has to exist somewhere.** AI reasons over what you've recorded. If your team's knowledge about a building lives in people's heads or in a folder nobody has opened in two years, the AI can't reach it. Capturing that reference information — equipment and systems detail, vendor terms, standing instructions per property — is usually the first thing Chesterbrook scopes in a property management engagement, because it's the layer that makes every downstream answer specific instead of generic.",
+            "**The information has to exist somewhere.** AI reasons over what you've recorded. If your team's knowledge about a building lives in people's heads or in a folder nobody has opened in two years, the AI can't reach it. Capturing that reference information — equipment and systems detail, vendor terms, standing instructions per property — is usually the first thing Chesterbrook AI scopes in a property management engagement, because it's the layer that makes every downstream answer specific instead of generic.",
             "**It has to reach your systems.** Yardi, AppFolio, Buildium, MRI, RealPage and the regional platforms vary enormously in how accessible they are to outside software. Some have solid APIs. Some have partial ones. Some have essentially none and require a different integration approach entirely. This is worth confirming before scoping anything, because it's the most common reason an otherwise sound project stalls.",
             "**The output has to land where the work already happens.** An AI tool that lives in its own tab is a tool your team will stop opening in three weeks. The deployments that stick put the output in Outlook, Gmail, Slack, or directly into the PMS, so nobody has to change where they work to get the benefit.",
           ],
@@ -71,7 +71,7 @@ export const aiForPropertyManagementPost: BlogPost = {
         },
         {
           type: "p",
-          text: "**Final approval on anything that becomes a record.** A work order becomes a maintenance history. A maintenance history gets read in a habitability dispute, an insurance claim, or a sale diligence package. A leasing decision touches fair housing. Every system Chesterbrook has shipped in this category works the same way — AI drafts, a person approves — not because the drafting is unreliable, but because accountability for a record can't be delegated to software. The approval step takes seconds when the draft is good, and it's the thing that makes the whole system defensible.",
+          text: "**Final approval on anything that becomes a record.** A work order becomes a maintenance history. A maintenance history gets read in a habitability dispute, an insurance claim, or a sale diligence package. A leasing decision touches fair housing. Every system Chesterbrook AI has shipped in this category works the same way — AI drafts, a person approves — not because the drafting is unreliable, but because accountability for a record can't be delegated to software. The approval step takes seconds when the draft is good, and it's the thing that makes the whole system defensible.",
         },
         {
           type: "p",
@@ -147,11 +147,11 @@ export const aiForPropertyManagementPost: BlogPost = {
       ],
     },
     {
-      heading: "About Chesterbrook",
+      heading: "About Chesterbrook AI",
       blocks: [
         {
           type: "p",
-          text: "Chesterbrook is an AI consulting and software firm based in McLean, Virginia, working with property managers, brokers, and developers. The work is custom — not a platform, and not a replacement for a system of record, but the layer that lives around it and handles what the platform doesn't.",
+          text: "Chesterbrook AI is a consulting and software firm based in McLean, Virginia, working with property managers, brokers, and developers. The work is custom — not a platform, and not a replacement for a system of record, but the layer that lives around it and handles what the platform doesn't.",
         },
         {
           type: "p",

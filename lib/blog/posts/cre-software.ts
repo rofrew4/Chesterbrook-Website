@@ -76,7 +76,7 @@ export const creSoftwarePost: BlogPost = {
       paragraphs: [
         "Custom in 2026 does not mean what it meant in 2018. It is not a six-month enterprise project. It is not a fixed-bid waterfall. It is not a system you can never change once it ships.",
         "The current pattern is narrow, fast, and modular. A V1 ships in one to three weeks. You see a working demo from week one. The scope is one workflow, not a platform. The system of record stays where it is — your PMS, your CRM, your accounting — and the custom layer lives around it, automating the work that the platform doesn't power.",
-        "That's what we do at Chesterbrook. We build AI-powered workflows for property managers, brokers, and developers — specifically the workflows that the big platforms have stopped serving well. We don't replace your system of record. We replace the analyst hours that live in the gap between it and the rest of your business.",
+        "That's what we do at Chesterbrook AI. We build AI-powered workflows for property managers, brokers, and developers — specifically the workflows that the big platforms have stopped serving well. We don't replace your system of record. We replace the analyst hours that live in the gap between it and the rest of your business.",
         "If you're approaching a renewal and you want a second opinion on whether the math actually pencils for your situation, that's the conversation to have. Not a pitch. A look at your stack, an honest read on what's still worth keeping, and a scope on what isn't.",
       ],
     },

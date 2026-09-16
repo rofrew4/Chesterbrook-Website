@@ -84,7 +84,7 @@ export const creAiPost: BlogPost = {
         "Custom doesn't mean a six-month enterprise project. It doesn't mean software that's frozen once it ships.",
         "The current pattern is narrow and fast. A V1 ships in one to three weeks. The scope is one workflow, not a platform. You see a working demo from the first week.",
         "Custom means the AI knows your business. It has access to your leases, deals, communications, and portfolio. It triggers automatically when an event happens. The output lives where your work already lives — Gmail, Outlook, your PMS, your CRM.",
-        "This is what we do at Chesterbrook. We don't sell platforms. We don't replace your system of record. We build the workflows around it that make AI actually useful for a real CRE business.",
+        "This is what we do at Chesterbrook AI. We don't sell platforms. We don't replace your system of record. We build the workflows around it that make AI actually useful for a real CRE business.",
       ],
     },
     {

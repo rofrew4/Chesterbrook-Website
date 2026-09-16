@@ -49,7 +49,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
         },
         {
           type: "p",
-          text: "The output that matters isn't a map. It's a ranked, scored list of parcels that fit your criteria, with owner contact information attached, refreshed on a schedule. It's the application Chesterbrook is asked to build most often in development, because most developers are doing a version of it manually and it's costing someone a substantial share of their week.",
+          text: "The output that matters isn't a map. It's a ranked, scored list of parcels that fit your criteria, with owner contact information attached, refreshed on a schedule. It's the application Chesterbrook AI is asked to build most often in development, because most developers are doing a version of it manually and it's costing someone a substantial share of their week.",
         },
         {
           type: "p",
@@ -76,7 +76,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
       blocks: [
         {
           type: "p",
-          text: "This is the most underexploited application in development, and the one Chesterbrook sees almost nobody building.",
+          text: "This is the most underexploited application in development, and the one Chesterbrook AI sees almost nobody building.",
         },
         {
           type: "p",
@@ -144,7 +144,7 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
     {
       heading: "What a developer should build first",
       blocks: [
-        { type: "p", text: "The sequence Chesterbrook recommends for most development shops:" },
+        { type: "p", text: "The sequence Chesterbrook AI recommends for most development shops:" },
         {
           type: "ol",
           items: [
@@ -157,11 +157,11 @@ export const aiForRealEstateDevelopersPost: BlogPost = {
       ],
     },
     {
-      heading: "About Chesterbrook",
+      heading: "About Chesterbrook AI",
       blocks: [
         {
           type: "p",
-          text: "Chesterbrook is an AI consulting and software firm based in McLean, Virginia, building custom tooling for developers, property managers, and brokers — parcel and site screening engines, public record monitoring, and document workflows.",
+          text: "Chesterbrook AI is a consulting and software firm based in McLean, Virginia, building custom tooling for developers, property managers, and brokers — parcel and site screening engines, public record monitoring, and document workflows.",
         },
         {
           type: "p",
