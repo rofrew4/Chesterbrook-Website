@@ -6,13 +6,13 @@ export function BlogListingJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Chesterbrook Insights",
+    name: "Chesterbrook AI Insights",
     description:
       "Practical guides on CRE data, software, and AI adoption for property managers, brokers, and developers.",
     url: `${SITE_URL}/blog`,
     publisher: {
       "@type": "Organization",
-      name: "Chesterbrook",
+      name: "Chesterbrook AI",
       url: SITE_URL,
     },
   };
@@ -35,12 +35,12 @@ export function BlogPostJsonLd({ post }: { post: BlogPost }) {
     dateModified: post.publishedAt,
     author: {
       "@type": "Organization",
-      name: "Chesterbrook",
+      name: "Chesterbrook AI",
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
-      name: "Chesterbrook",
+      name: "Chesterbrook AI",
       url: SITE_URL,
     },
     mainEntityOfPage: {

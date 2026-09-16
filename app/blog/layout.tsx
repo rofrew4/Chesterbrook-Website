@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Practical guides on CRE public data, software renewals, and AI adoption for property managers, brokers, and developers.",
   openGraph: {
-    title: "Chesterbrook Insights — CRE Data, Software & AI",
+    title: "Chesterbrook AI Insights — CRE Data, Software & AI",
     description:
       "Practical guides on CRE public data, software renewals, and AI adoption.",
     type: "website",

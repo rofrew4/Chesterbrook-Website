@@ -38,7 +38,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: post.title,
     description: post.description,
     keywords: post.keywords,
-    authors: [{ name: "Chesterbrook" }],
+    authors: [{ name: "Chesterbrook AI" }],
     openGraph: {
       title: post.title,
       description: post.description,
