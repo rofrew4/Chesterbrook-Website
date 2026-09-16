@@ -82,7 +82,7 @@ export default function BlogPostPage({ params }: PageProps) {
       <Nav />
       <main className="scroll-mt-nav pt-28 md:pt-32">
         <article className="mx-auto max-w-[1200px] px-6 pb-20 md:px-10 md:pb-28">
-          <div className="max-w-[760px]">
+          <div className="mx-auto max-w-[760px]">
             <Link
               href="/blog"
               className="text-[13px] text-secondary transition-colors hover:text-accent"
@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }: PageProps) {
             </header>
           </div>
 
-          <div className="mt-10 max-w-[900px] overflow-hidden rounded-2xl border border-border bg-widget shadow-sm">
+          <div className="mx-auto mt-10 max-w-[760px] overflow-hidden rounded-2xl border border-border bg-widget shadow-sm">
             <BlogVisual id={post.visual} />
           </div>
 

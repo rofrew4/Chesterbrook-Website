@@ -45,20 +45,106 @@ function SoftwareStackVisual() {
 }
 
 function AiStagesVisual() {
-  const stages = ["Basics", "Automation", "Custom"];
+  const stages = [
+    {
+      step: "01",
+      label: "Basics",
+      tools: "Claude · ChatGPT",
+      does: ["Doc Q&A", "Drafting", "Research"],
+      ceiling: "Copy-paste only",
+    },
+    {
+      step: "02",
+      label: "Automation",
+      tools: "Zapier · Make · n8n",
+      does: ["Scheduled", "Triggered", "Routing"],
+      ceiling: "Generic output",
+    },
+    {
+      step: "03",
+      label: "Custom",
+      tools: "Built for you",
+      does: ["Your leases", "Your deals", "In your inbox"],
+      ceiling: "V1 in 1\u20133 weeks",
+    },
+  ];
+
   return (
-    <div className="flex h-full min-h-[140px] items-end gap-3 p-6">
-      {stages.map((stage, i) => (
-        <div key={stage} className="flex flex-1 flex-col items-center gap-2">
+    <div className="grid min-h-[140px] grid-cols-3 gap-2 p-5 md:gap-3 md:p-6">
+      {stages.map((stage, i) => {
+        const isCustom = i === 2;
+        return (
           <div
-            className={`w-full rounded-t border border-b-0 border-border bg-widget ${
-              i === 2 ? "border-accent/30 bg-accent/5" : ""
+            key={stage.label}
+            className={`flex flex-col rounded border ${
+              isCustom
+                ? "border-accent/40 bg-accent/5"
+                : "border-border bg-widget"
             }`}
-            style={{ height: `${48 + i * 28}px` }}
-          />
-          <span className="text-[9px] uppercase tracking-wider text-muted">{stage}</span>
-        </div>
-      ))}
+          >
+            <div
+              className={`flex items-baseline gap-1.5 border-b px-2 py-1.5 ${
+                isCustom ? "border-accent/25" : "border-border"
+              }`}
+            >
+              <span
+                className={`text-[8px] tabular-nums ${
+                  isCustom ? "text-accent/70" : "text-muted/50"
+                }`}
+              >
+                {stage.step}
+              </span>
+              <span
+                className={`truncate text-[9px] uppercase tracking-wider ${
+                  isCustom ? "text-accent" : "text-muted"
+                }`}
+              >
+                {stage.label}
+              </span>
+            </div>
+
+            <div className="flex flex-1 flex-col gap-1 px-2 py-2">
+              <span
+                className={`mb-0.5 block truncate text-[8px] ${
+                  isCustom ? "text-accent/60" : "text-muted/55"
+                }`}
+              >
+                {stage.tools}
+              </span>
+              {stage.does.map((item) => (
+                <span
+                  key={item}
+                  className={`flex items-center gap-1 text-[9px] leading-tight ${
+                    isCustom ? "text-accent/90" : "text-muted/85"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`h-1 w-1 shrink-0 rounded-full ${
+                      isCustom ? "bg-accent/60" : "bg-border"
+                    }`}
+                  />
+                  <span className="truncate">{item}</span>
+                </span>
+              ))}
+            </div>
+
+            <div
+              className={`border-t border-dashed px-2 py-1.5 ${
+                isCustom ? "border-accent/30" : "border-border"
+              }`}
+            >
+              <span
+                className={`block truncate text-[8px] uppercase tracking-wide ${
+                  isCustom ? "text-accent" : "text-muted/50"
+                }`}
+              >
+                {stage.ceiling}
+              </span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
