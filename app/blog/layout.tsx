@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Insights",
+  // An explicit template here, rather than a bare string, so posts under
+  // /blog/[slug] inherit the brand suffix too.
+  title: {
+    default: "Insights",
+    template: `%s | ${SITE_NAME}`,
+  },
   description:
     "Practical guides on CRE public data, software renewals, and AI adoption for property managers, brokers, and developers.",
   openGraph: {
