@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import OrganizationJsonLd from "@/components/OrganizationJsonLd";
+import PostHogProvider from "@/components/analytics/PostHogProvider";
+import RB2BScript from "@/components/analytics/RB2BScript";
 import {
   getGoogleSiteVerification,
   SITE_DESCRIPTION,
@@ -67,7 +69,8 @@ export default function RootLayout({
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="overflow-x-hidden">
         <OrganizationJsonLd />
-        {children}
+        <PostHogProvider>{children}</PostHogProvider>
+        <RB2BScript />
       </body>
     </html>
   );

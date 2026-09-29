@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   CONTACT_EMAIL,
   CONTACT_PHONE,
@@ -10,7 +11,12 @@ export default function Footer() {
       <div className="mx-auto max-w-[1200px] px-6 py-8 md:px-10">
         <div className="flex flex-col gap-3 text-[12px] text-footer sm:flex-row sm:items-center sm:justify-between">
           <p>Old Chesterbrook LLC · McLean, Virginia</p>
-          <p>© 2026 Chesterbrook</p>
+          <p>
+            © 2026 Chesterbrook ·{" "}
+            <Link href="/privacy" className="transition-colors hover:text-foreground">
+              Privacy
+            </Link>
+          </p>
         </div>
         <p className="mt-4 text-[12px] text-footer">
           Contact:{" "}
