@@ -47,6 +47,7 @@ function TimelineItem({
         )}
       </div>
 
+      <div className="flex min-w-0 flex-1 flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
       <motion.div
         className="min-w-0 flex-1 pt-0.5"
         initial={false}
@@ -62,7 +63,7 @@ function TimelineItem({
       </motion.div>
 
       <motion.div
-        className="mockup-frame w-[min(34vw,200px)] min-w-[108px] max-w-[200px] shrink-0 self-center overflow-hidden p-2 sm:w-[180px]"
+        className="mockup-frame w-full max-w-[260px] overflow-hidden p-2 sm:w-[180px] sm:max-w-[200px] sm:shrink-0 sm:self-center"
         initial={false}
         animate={
           inView
@@ -73,6 +74,7 @@ function TimelineItem({
       >
         {getStrategyPhaseVisual(phaseId)}
       </motion.div>
+      </div>
     </div>
   );
 }
