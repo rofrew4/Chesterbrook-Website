@@ -45,7 +45,8 @@
 
   .nav-link::after {
     content: "";
-    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-accent transition-all duration-300;
+    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-accent;
+    transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .nav-link:hover::after {
@@ -73,7 +74,7 @@
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgb(214 206 196) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
