@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 232 234 230;   /* concrete */
-    --widget: 245 246 243;       /* slab */
-    --foreground: 21 23 26;      /* ink */
-    --surface: 224 227 222;
-    --border: 208 212 206;
-    --surface-border: 199 204 197;
-    --footer-border: 214 218 212;
+    --background: 12 26 39;      /* blueprint */
+    --widget: 18 37 52;          /* raised panel */
+    --foreground: 230 237 243;   /* paper white */
+    --surface: 16 32 46;
+    --border: 32 57 76;          /* hairline */
+    --surface-border: 38 66 88;
+    --footer-border: 28 50 68;
   }
 
   html {
@@ -31,7 +31,7 @@
   }
 
   ::selection {
-    @apply bg-accent/15 text-foreground;
+    @apply bg-accent/30 text-foreground;
   }
 }
 
@@ -75,7 +75,7 @@
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, rgb(199 204 197) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgb(32 57 76) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 

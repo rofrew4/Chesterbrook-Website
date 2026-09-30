@@ -21,7 +21,7 @@ type Floor = {
 };
 
 const FLOORS: Floor[] = [
-  { level: "12", tenant: "Meridian Capital", sf: "14,200", expiry: 2031, leased: 1 },
+  { level: "12", tenant: "Langley Ridge Partners", sf: "14,200", expiry: 2031, leased: 1 },
   { level: "11", tenant: "Acme Retail", sf: "12,400", expiry: 2027, leased: 1 },
   { level: "10", tenant: "Available", sf: "13,050", expiry: null, leased: 0 },
   { level: "09", tenant: "Northgate Holdings", sf: "8,200", expiry: 2026, leased: 0.64 },
@@ -38,8 +38,8 @@ const FLOORS: Floor[] = [
 /** Near-term expiries are the thing an operator is scanning for. */
 function bandColor(f: Floor) {
   if (f.expiry === null) return "var(--vacancy)";
-  if (f.expiry <= 2027) return "#7B1E3A";
-  return "#2B4C7E";
+  if (f.expiry <= 2027) return "#C4425F";
+  return "#3E7FAC";
 }
 
 const STEP_MS = 170;
@@ -101,7 +101,7 @@ export default function StackingPlan() {
   const leasedFloors = FLOORS.filter((f) => f.leased > 0).length;
 
   return (
-    <div ref={ref} className="w-full" style={{ ["--vacancy" as string]: "#D8D2C7" }}>
+    <div ref={ref} className="w-full" style={{ ["--vacancy" as string]: "#24404F" }}>
       <div className="mb-4 flex items-baseline justify-between border-b border-border pb-3">
         <p className="text-[15px] font-medium text-ink">1400 Chesterbrook Plaza</p>
         <p className="text-[13px] tabular-nums text-graphite">
@@ -124,7 +124,7 @@ export default function StackingPlan() {
             >
               <span className="text-[12px] tabular-nums text-graphite">{f.level}</span>
 
-              <div className="relative h-[22px] overflow-hidden rounded-[2px] bg-[var(--vacancy)]/55">
+              <div className="relative h-[22px] overflow-hidden rounded-[2px] bg-[var(--vacancy)]/70">
                 <div
                   className="absolute inset-y-0 left-0 flex items-center px-2"
                   style={{
@@ -134,7 +134,7 @@ export default function StackingPlan() {
                   }}
                 >
                   {f.leased > 0.3 && (
-                    <span className="truncate text-[12px] leading-none text-white/95">
+                    <span className="truncate text-[12px] leading-none text-[#0C1A27]">
                       {f.tenant}
                     </span>
                   )}

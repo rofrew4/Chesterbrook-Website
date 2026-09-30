@@ -1,6 +1,6 @@
 "use client";
 
-import StackingPlan from "./StackingPlan";
+import HeroFlow from "./HeroFlow";
 import { scrollToSection } from "@/lib/scroll";
 import { CALENDLY_URL } from "@/lib/links";
 
@@ -44,8 +44,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="rounded-[4px] border border-surface-border bg-widget p-5 md:p-6">
-          <StackingPlan />
+        <div className="relative h-[320px] w-full md:h-[420px] lg:h-[460px]">
+          <HeroFlow />
         </div>
       </div>
     </section>
