@@ -30,7 +30,7 @@ export default function ZigzagRow({
 
   return (
     <article ref={ref} className="border-t border-border py-14 md:py-16">
-      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(260px,340px)] md:gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-12">
+      <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(300px,400px)] md:gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(440px,540px)] lg:gap-16">
         <motion.div
           initial={false}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
