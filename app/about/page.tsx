@@ -65,15 +65,15 @@ export default function AboutPage() {
             </div>
             </div>
 
-            <figure className="m-0 mt-12 max-w-[360px]">
-              <div className="overflow-hidden rounded-[4px] border border-surface-border">
+            <figure className="m-0 mt-12 w-full max-w-[280px] sm:max-w-[300px]">
+              <div className="overflow-hidden rounded-2xl">
                 <Image
                   src="/about/team.webp"
                   alt="Two members of the Chesterbrook AI team"
                   width={1000}
                   height={1333}
                   className="h-auto w-full"
-                  sizes="360px"
+                  sizes="(max-width: 640px) 280px, 300px"
                 />
               </div>
               <figcaption className="mt-3 text-[13px] leading-relaxed text-secondary">
@@ -82,14 +82,15 @@ export default function AboutPage() {
             </figure>
           </div>
 
-          <figure className="m-0">
-            <div className="overflow-hidden rounded-[4px] border border-surface-border">
+          <figure className="m-0 w-full max-w-[320px] sm:max-w-[360px] lg:max-w-none">
+            <div className="overflow-hidden rounded-2xl">
               <Image
                 src="/about/rowan-interview.webp"
                 alt="Rowan Frew interviewing an agent at an eXp Realty Regional Rallies event"
                 width={923}
                 height={1387}
                 className="h-auto w-full"
+                sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
                 priority
               />
             </div>
