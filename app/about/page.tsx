@@ -20,7 +20,8 @@ export default function AboutPage() {
         </h1>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-16">
-          <div className="max-w-[62ch] space-y-6 text-[17px] leading-[1.7] text-secondary">
+          <div className="max-w-[62ch]">
+            <div className="space-y-6 text-[17px] leading-[1.7] text-secondary">
             <p>
               Chesterbrook AI is made up of students and recent graduates from
               Northeastern University. We are small on purpose: the people who
@@ -57,6 +58,23 @@ export default function AboutPage() {
                 See what we&rsquo;ve built
               </Link>
             </div>
+            </div>
+
+            <figure className="m-0 mt-12 max-w-[360px]">
+              <div className="overflow-hidden rounded-[4px] border border-surface-border">
+                <Image
+                  src="/about/team.webp"
+                  alt="Two members of the Chesterbrook AI team"
+                  width={1000}
+                  height={1333}
+                  className="h-auto w-full"
+                  sizes="360px"
+                />
+              </div>
+              <figcaption className="mt-3 text-[13px] leading-relaxed text-secondary">
+                The team, between classes in Boston.
+              </figcaption>
+            </figure>
           </div>
 
           <figure className="m-0">
@@ -77,20 +95,6 @@ export default function AboutPage() {
           </figure>
         </div>
 
-        <figure className="m-0 mt-20">
-          <div className="h-[300px] overflow-hidden rounded-[4px] border border-surface-border md:h-[440px]">
-            <Image
-              src="/about/team.webp"
-              alt="Two members of the Chesterbrook AI team"
-              width={1000}
-              height={1333}
-              className="h-full w-full object-cover object-[center_56%]"
-            />
-          </div>
-          <figcaption className="mt-3 max-w-[60ch] text-[13px] leading-relaxed text-secondary">
-            The team, between classes in Boston.
-          </figcaption>
-        </figure>
       </div>
     </main>
   );
