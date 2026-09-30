@@ -19,14 +19,8 @@ export default function Hero() {
           <p className="eyebrow">AI strategy and integration</p>
 
           <h1 className="mt-5 font-display text-[clamp(2.1rem,3.6vw,3.25rem)] leading-[1.06] text-foreground">
-            Automating property management and commercial real estate.
+            Your team&rsquo;s personal engineering arm.
           </h1>
-
-          <p className="mt-7 max-w-[54ch] text-[17px] leading-[1.65] text-secondary">
-            We build the software your team would have asked for, if anyone had
-            the time to build it. Lease abstraction, deal sourcing, and the
-            workflows in between.
-          </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-5">
             <a

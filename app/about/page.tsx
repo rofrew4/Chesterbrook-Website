@@ -21,7 +21,7 @@ export default function AboutPage() {
         <p className="eyebrow">About</p>
 
         <h1 className="mt-5 max-w-[20ch] font-display text-[clamp(2.1rem,3.6vw,3.25rem)] leading-[1.06] text-foreground">
-          Your team&rsquo;s personal engineering arm.
+          Built by people who learned this business from the inside.
         </h1>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-16">

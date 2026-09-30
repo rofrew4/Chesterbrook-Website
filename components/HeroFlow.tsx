@@ -96,20 +96,6 @@ export default function HeroFlow() {
       last = time;
       ctx.clearRect(0, 0, w, h);
 
-      // resolved rows on the right — where the flow is heading
-      ctx.lineWidth = 1;
-      for (let i = 0; i < ROWS; i++) {
-        const y = h * 0.18 + (i / (ROWS - 1)) * h * 0.64;
-        const g = ctx.createLinearGradient(w * 0.52, 0, w, 0);
-        g.addColorStop(0, "rgba(90,160,208,0)");
-        g.addColorStop(1, "rgba(90,160,208,0.16)");
-        ctx.strokeStyle = g;
-        ctx.beginPath();
-        ctx.moveTo(w * 0.52, y);
-        ctx.lineTo(w, y);
-        ctx.stroke();
-      }
-
       for (const p of parts) {
         if (!reduced) {
           p.t += p.speed * dt;
