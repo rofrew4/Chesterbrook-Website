@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 246 242 235;
-    --widget: 255 255 255;
-    --foreground: 26 26 26;
-    --surface: 241 235 229;
-    --border: 229 224 216;
-    --surface-border: 223 217 210;
-    --footer-border: 233 229 221;
+    --background: 232 234 230;   /* concrete */
+    --widget: 245 246 243;       /* slab */
+    --foreground: 21 23 26;      /* ink */
+    --surface: 224 227 222;
+    --border: 208 212 206;
+    --surface-border: 199 204 197;
+    --footer-border: 214 218 212;
   }
 
   html {
@@ -25,8 +25,9 @@
   }
 
   .font-display {
-    font-variation-settings: "WONK" 0, "SOFT" 100;
-    font-weight: 300;
+    font-variation-settings: "wdth" 118;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
@@ -36,7 +37,7 @@
 
 @layer components {
   .eyebrow {
-    @apply font-sans text-[11px] font-normal uppercase tracking-[0.25em] text-accent;
+    @apply font-sans text-[15px] font-medium text-accent;
   }
 
   .nav-link {
@@ -54,7 +55,7 @@
   }
 
   .tag-pill {
-    @apply inline-block rounded-full border border-border px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-secondary;
+    @apply inline-block rounded-[3px] border border-border px-2.5 py-1 text-[12px] text-secondary;
   }
 
   .mockup-frame {
@@ -74,7 +75,7 @@
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, rgb(214 206 196) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgb(199 204 197) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
