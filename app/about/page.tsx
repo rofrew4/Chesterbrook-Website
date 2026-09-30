@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import { CALENDLY_URL } from "@/lib/links";
 import { SITE_NAME } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description: `${SITE_NAME} is a team of students and recent graduates from Northeastern University building AI software for property managers, developers, and commercial real estate operators.`,
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
-    <main className="bg-background pb-28 pt-32 md:pt-40">
+    <>
+      <Nav />
+      <main className="scroll-mt-nav bg-background pb-28 pt-32 md:pt-40">
       <div className="mx-auto w-full max-w-[1120px] px-6 md:px-10">
         <p className="eyebrow">About</p>
 
         <h1 className="mt-5 max-w-[20ch] font-display text-[clamp(2.1rem,3.6vw,3.25rem)] leading-[1.06] text-foreground">
-          Built by people who learned this business from the inside.
+          Your team&rsquo;s personal engineering arm.
         </h1>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-16">
@@ -95,7 +100,9 @@ export default function AboutPage() {
           </figure>
         </div>
 
-      </div>
-    </main>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
