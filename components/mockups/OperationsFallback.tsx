@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const properties = [
   { name: "Harbor View", occ: "94%", rev: "$42K" },
-  { name: "The Meridian", occ: "88%", rev: "$38K" },
+  { name: "The Rosslyn", occ: "88%", rev: "$38K" },
   { name: "Parkside", occ: "91%", rev: "$29K" },
 ];
 

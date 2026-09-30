@@ -52,18 +52,16 @@ export default function Nav() {
     router.push("/");
   };
 
-  const overDarkHero = isHome && !scrolled && !menuOpen;
   const isBlog = pathname.startsWith("/blog");
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          overDarkHero
-            ? "border-b border-white/10 bg-transparent"
-            : scrolled || menuOpen
-              ? "border-b border-border bg-background/95 backdrop-blur-md shadow-sm"
-              : "bg-background/80 backdrop-blur-sm"
+        style={{ isolation: "isolate" }}
+        className={`fixed top-0 left-0 right-0 z-30 [transition:background-color_400ms_ease,border-color_400ms_ease,box-shadow_400ms_ease] ${
+          scrolled || menuOpen
+            ? "border-b border-border bg-background/90 shadow-sm backdrop-blur-md"
+            : "border-b border-transparent bg-background/70 backdrop-blur-sm"
         }`}
       >
         <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:px-10">
@@ -71,16 +69,10 @@ export default function Nav() {
             type="button"
             onClick={handleTopNav}
             aria-label={`${SITE_NAME} — back to top`}
-            className={`flex items-center gap-[5px] font-display text-[18px] tracking-tight transition-colors ${
-              overDarkHero ? "text-white" : "text-foreground"
-            }`}
+            className="flex items-center gap-[5px] font-display text-[18px] tracking-tight text-foreground transition-colors duration-200"
           >
             {/* 22px = 1.75x the 18px Fraunces cap height, matching the lockup spec */}
-            <BrandMark
-              className={`h-[22px] w-auto shrink-0 transition-colors ${
-                overDarkHero ? "text-white" : "text-accent"
-              }`}
-            />
+            <BrandMark className="h-[22px] w-auto shrink-0 text-accent" />
             <span>{SITE_NAME}</span>
           </button>
 
@@ -90,23 +82,25 @@ export default function Nav() {
                 key={link.href}
                 type="button"
                 onClick={() => handleSectionNav(link.href)}
-                className={`nav-link text-[13px] transition-colors ${
-                  overDarkHero
-                    ? "text-white/85 hover:text-white"
-                    : "text-secondary hover:text-accent"
-                }`}
+                className="nav-link text-[13px] text-secondary transition-colors duration-200 hover:text-accent"
               >
                 {link.label}
               </button>
             ))}
             <Link
+              href="/about"
+              className={`nav-link text-[13px] transition-colors duration-200 ${
+                pathname.startsWith("/about")
+                  ? "text-accent"
+                  : "text-secondary hover:text-accent"
+              }`}
+            >
+              About
+            </Link>
+            <Link
               href="/blog"
-              className={`nav-link text-[13px] transition-colors ${
-                overDarkHero
-                  ? "text-white/85 hover:text-white"
-                  : isBlog
-                    ? "text-accent"
-                    : "text-secondary hover:text-accent"
+              className={`nav-link text-[13px] transition-colors duration-200 ${
+                isBlog ? "text-accent" : "text-secondary hover:text-accent"
               }`}
             >
               Blog
@@ -123,27 +117,27 @@ export default function Nav() {
 
           <button
             type="button"
-            className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
+            className="relative z-[2] flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
             <span
-              className={`block h-px w-5 transition-all duration-300 ${
-                overDarkHero ? "bg-white" : "bg-foreground"
-              } ${menuOpen ? "translate-y-[3.5px] rotate-45" : ""}`}
+              className={`block h-px w-5 bg-foreground [transition:transform_300ms_ease] ${
+                menuOpen ? "translate-y-[3.5px] rotate-45" : ""
+              }`}
             />
             <span
-              className={`block h-px w-5 transition-all duration-300 ${
-                overDarkHero ? "bg-white" : "bg-foreground"
-              } ${menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+              className={`block h-px w-5 bg-foreground [transition:transform_300ms_ease] ${
+                menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
+              }`}
             />
           </button>
         </nav>
       </header>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-background transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-20 flex flex-col items-center justify-center bg-background transition-opacity duration-300 md:hidden ${
           menuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -160,6 +154,13 @@ export default function Nav() {
               {link.label}
             </button>
           ))}
+          <Link
+            href="/about"
+            onClick={() => setMenuOpen(false)}
+            className="font-display text-3xl tracking-tight text-foreground"
+          >
+            About
+          </Link>
           <Link
             href="/blog"
             onClick={() => setMenuOpen(false)}

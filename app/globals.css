@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 246 242 235;
-    --widget: 255 255 255;
-    --foreground: 26 26 26;
-    --surface: 241 235 229;
-    --border: 229 224 216;
-    --surface-border: 223 217 210;
-    --footer-border: 233 229 221;
+    --background: 12 26 39;      /* blueprint */
+    --widget: 18 37 52;          /* raised panel */
+    --foreground: 230 237 243;   /* paper white */
+    --surface: 16 32 46;
+    --border: 32 57 76;          /* hairline */
+    --surface-border: 38 66 88;
+    --footer-border: 28 50 68;
   }
 
   html {
@@ -25,18 +25,19 @@
   }
 
   .font-display {
-    font-variation-settings: "WONK" 0, "SOFT" 100;
-    font-weight: 300;
+    font-variation-settings: "wdth" 118;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
-    @apply bg-accent/15 text-foreground;
+    @apply bg-accent/30 text-foreground;
   }
 }
 
 @layer components {
   .eyebrow {
-    @apply font-sans text-[11px] font-normal uppercase tracking-[0.25em] text-accent;
+    @apply font-sans text-[15px] font-medium text-accent;
   }
 
   .nav-link {
@@ -45,7 +46,8 @@
 
   .nav-link::after {
     content: "";
-    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-accent transition-all duration-300;
+    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-accent;
+    transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .nav-link:hover::after {
@@ -53,7 +55,7 @@
   }
 
   .tag-pill {
-    @apply inline-block rounded-full border border-border px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-secondary;
+    @apply inline-block rounded-[3px] border border-border px-2.5 py-1 text-[12px] text-secondary;
   }
 
   .mockup-frame {
@@ -73,7 +75,7 @@
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgb(32 57 76) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 

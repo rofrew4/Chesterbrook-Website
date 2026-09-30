@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import OrganizationJsonLd from "@/components/OrganizationJsonLd";
 import PostHogProvider from "@/components/analytics/PostHogProvider";
 import RB2BScript from "@/components/analytics/RB2BScript";
@@ -11,17 +11,10 @@ import {
 } from "@/lib/seo";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const archivo = Archivo({
   subsets: ["latin"],
-  axes: ["SOFT", "WONK"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-inter",
+  axes: ["wdth"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
@@ -66,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${archivo.variable}`}>
       <body className="overflow-x-hidden">
         <OrganizationJsonLd />
         <PostHogProvider>{children}</PostHogProvider>
