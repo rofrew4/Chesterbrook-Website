@@ -88,6 +88,16 @@ export default function Nav() {
               </button>
             ))}
             <Link
+              href="/about"
+              className={`nav-link text-[13px] transition-colors duration-200 ${
+                pathname.startsWith("/about")
+                  ? "text-accent"
+                  : "text-secondary hover:text-accent"
+              }`}
+            >
+              About
+            </Link>
+            <Link
               href="/blog"
               className={`nav-link text-[13px] transition-colors duration-200 ${
                 isBlog ? "text-accent" : "text-secondary hover:text-accent"
@@ -144,6 +154,13 @@ export default function Nav() {
               {link.label}
             </button>
           ))}
+          <Link
+            href="/about"
+            onClick={() => setMenuOpen(false)}
+            className="font-display text-3xl tracking-tight text-foreground"
+          >
+            About
+          </Link>
           <Link
             href="/blog"
             onClick={() => setMenuOpen(false)}

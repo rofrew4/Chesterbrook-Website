@@ -1,6 +1,7 @@
 "use client";
 
 import HeroFlow from "./HeroFlow";
+import HeroVideoBackground from "./HeroVideoBackground";
 import { scrollToSection } from "@/lib/scroll";
 import { CALENDLY_URL } from "@/lib/links";
 
@@ -8,10 +9,12 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative border-b border-border bg-background scroll-mt-nav"
+      className="relative overflow-hidden border-b border-border bg-background scroll-mt-nav"
       style={{ isolation: "isolate" }}
     >
-      <div className="mx-auto grid w-full max-w-[1320px] items-center gap-14 px-6 pb-20 pt-32 md:px-10 md:pb-28 md:pt-40 lg:grid-cols-[minmax(0,1fr)_minmax(460px,600px)] lg:gap-20">
+      <HeroVideoBackground />
+
+      <div className="relative z-[1] mx-auto grid w-full max-w-[1320px] items-center gap-14 px-6 pb-20 pt-32 md:px-10 md:pb-28 md:pt-40 lg:grid-cols-[minmax(0,1fr)_minmax(460px,600px)] lg:gap-20">
         <div>
           <p className="eyebrow">AI strategy and integration</p>
 

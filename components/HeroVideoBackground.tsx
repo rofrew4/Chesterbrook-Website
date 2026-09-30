@@ -61,8 +61,7 @@ function waitToPlay(video: HTMLVideoElement, src: string): Promise<void> {
 function StaticHeroBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-dark via-[#1a0a10] to-black" />
-      <div className="absolute inset-0 bg-gradient-to-r from-accent-dark/95 to-black/70" />
+      <div className="absolute inset-0 bg-background" />
     </div>
   );
 }
@@ -171,7 +170,7 @@ export default function HeroVideoBackground() {
         preload="none"
         className="absolute inset-0 h-full w-full scale-105 object-cover opacity-0"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-accent-dark/95 to-black/70" />
+      <div className="absolute inset-0 bg-[rgb(12_26_39/0.88)]" />
     </div>
   );
 }
