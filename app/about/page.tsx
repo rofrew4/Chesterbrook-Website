@@ -68,35 +68,35 @@ export default function AboutPage() {
             <figure className="m-0 mt-12 w-full max-w-[280px] sm:max-w-[300px]">
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src="/about/team.webp"
-                  alt="Two members of the Chesterbrook AI team"
-                  width={1000}
-                  height={1333}
+                  src="/about/rowan-interview.webp"
+                  alt="Rowan Frew interviewing an agent at an industry event"
+                  width={923}
+                  height={1387}
                   className="h-auto w-full"
                   sizes="(max-width: 640px) 280px, 300px"
                 />
               </div>
               <figcaption className="mt-3 text-[13px] leading-relaxed text-secondary">
-                The team, between classes in Boston.
+                Rowan Frew on the floor at an industry event &mdash; most of
+                what we build starts in conversations like this one.
               </figcaption>
             </figure>
           </div>
 
-          <figure className="m-0 w-full max-w-[320px] sm:max-w-[360px] lg:max-w-none">
+          <figure className="order-first m-0 w-full max-w-[320px] sm:max-w-[360px] lg:order-none lg:max-w-none">
             <div className="overflow-hidden rounded-2xl">
               <Image
-                src="/about/rowan-interview.webp"
-                alt="Rowan Frew interviewing an agent at an eXp Realty Regional Rallies event"
-                width={923}
-                height={1387}
+                src="/about/team.webp"
+                alt="Two members of the Chesterbrook AI team"
+                width={1000}
+                height={1333}
                 className="h-auto w-full"
                 sizes="(max-width: 640px) 320px, (max-width: 1024px) 360px, 420px"
                 priority
               />
             </div>
             <figcaption className="mt-3 text-[13px] leading-relaxed text-secondary">
-              Rowan Frew on the floor at an industry event &mdash; most of what
-              we build starts in conversations like this one.
+              The team, between classes in Boston.
             </figcaption>
           </figure>
         </div>
