@@ -170,7 +170,8 @@ export default function HeroVideoBackground() {
         preload="none"
         className="absolute inset-0 h-full w-full scale-105 object-cover opacity-0"
       />
-      <div className="absolute inset-0 bg-[rgb(12_26_39/0.88)]" />
+      <div className="absolute inset-0 bg-[rgb(123_30_58/0.72)]" />
+      <div className="absolute inset-0 bg-[rgb(12_26_39/0.45)]" />
     </div>
   );
 }

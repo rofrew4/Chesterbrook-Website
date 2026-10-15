@@ -1,6 +1,5 @@
 "use client";
 
-import HeroFlow from "./HeroFlow";
 import HeroVideoBackground from "./HeroVideoBackground";
 import { scrollToSection } from "@/lib/scroll";
 import { CALENDLY_URL } from "@/lib/links";
@@ -14,8 +13,8 @@ export default function Hero() {
     >
       <HeroVideoBackground />
 
-      <div className="relative z-[1] mx-auto grid w-full max-w-[1320px] items-center gap-14 px-6 pb-20 pt-32 md:px-10 md:pb-28 md:pt-40 lg:grid-cols-[minmax(0,1fr)_minmax(460px,600px)] lg:gap-20">
-        <div>
+      <div className="relative z-[1] mx-auto w-full max-w-[1320px] px-6 pb-20 pt-32 md:px-10 md:pb-28 md:pt-40">
+        <div className="max-w-[640px]">
           <h1 className="font-display text-[clamp(2.1rem,3.6vw,3.25rem)] leading-[1.06] text-foreground">
             Your team&rsquo;s personal engineering arm.
           </h1>
@@ -42,10 +41,6 @@ export default function Hero() {
               See what we&rsquo;ve built
             </button>
           </div>
-        </div>
-
-        <div className="relative h-[320px] w-full md:h-[420px] lg:h-[460px]">
-          <HeroFlow />
         </div>
       </div>
     </section>
