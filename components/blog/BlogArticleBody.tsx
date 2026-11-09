@@ -100,11 +100,10 @@ export default function BlogArticleBody({ post }: { post: BlogPost }) {
 
       <div className="blog-cta">
         <p>
-          Want to talk through how this applies to your business? Book a consult
-          — no pitch, just a practical conversation.
+          Want to see how this applies to your firm? Thirty minutes, no pitch.
         </p>
         <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-          Book a consult →
+          Book a call
         </a>
       </div>
 

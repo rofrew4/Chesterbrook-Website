@@ -13,10 +13,10 @@ export default function PrivacyPage() {
   return (
     <>
       <Nav />
-      <main className="scroll-mt-nav pt-28 md:pt-32">
-        <div className="mx-auto max-w-[720px] px-6 pb-20 md:px-10 md:pb-28">
+      <main className="pt-[calc(var(--nav-h)+64px)] md:pt-[calc(var(--nav-h)+96px)]">
+        <div className="mx-auto max-w-prose px-4 pb-24 sm:px-6 md:pb-36">
           <p className="eyebrow">Legal</p>
-          <h1 className="mt-4 font-display text-headline text-foreground">
+          <h1 className="mt-3 font-display text-display text-foreground">
             Privacy Policy
           </h1>
           <p className="mt-4 text-[14px] text-secondary">Last updated September 28, 2026</p>

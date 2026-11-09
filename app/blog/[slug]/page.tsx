@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import BlogCard, { formatPostDate } from "@/components/blog/BlogCard";
 import BlogArticleBody from "@/components/blog/BlogArticleBody";
 import BlogVisual from "@/components/blog/BlogVisual";
+import { ChevronLeft } from "@/components/Icons";
 import {
   BlogFaqJsonLd,
   BlogPostJsonLd,
@@ -58,17 +60,6 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-function formatDate(iso: string) {
-  // `iso` is date-only, so it parses as UTC midnight — format in UTC to avoid
-  // rendering the previous day in western timezones.
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-}
-
 export default function BlogPostPage({ params }: PageProps) {
   const post = getBlogPost(params.slug);
   if (!post) notFound();
@@ -80,78 +71,68 @@ export default function BlogPostPage({ params }: PageProps) {
       <BlogPostJsonLd post={post} />
       <BlogFaqJsonLd post={post} />
       <Nav />
-      <main className="scroll-mt-nav pt-28 md:pt-32">
-        <article className="mx-auto max-w-[1200px] px-6 pb-20 md:px-10 md:pb-28">
-          <div className="mx-auto max-w-[760px]">
-            <Link
-              href="/blog"
-              className="text-[13px] text-secondary transition-colors hover:text-accent"
-            >
-              ← All insights
-            </Link>
+      <main className="bg-background pb-24 pt-[calc(var(--nav-h)+48px)] md:pb-36 md:pt-[calc(var(--nav-h)+72px)]">
+        <article>
+          <div className="container-site">
+            <div className="mx-auto max-w-prose">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-1 text-[14px] text-accent hover:underline hover:underline-offset-[3px]"
+              >
+                <ChevronLeft />
+                Insights
+              </Link>
 
-            <header className="mt-8">
-              <div className="flex flex-wrap items-center gap-3 text-[12px] uppercase tracking-[0.18em] text-muted">
-                <time dateTime={post.publishedAt}>
-                  {formatDate(post.publishedAt)}
-                </time>
-                <span aria-hidden>·</span>
-                <span>{post.readingTimeMinutes} min read</span>
+              <header className="mt-10">
+                <p className="text-[14px] font-semibold text-secondary">
+                  <time dateTime={post.publishedAt}>{formatPostDate(post.publishedAt)}</time>
+                  <span aria-hidden> · </span>
+                  {post.readingTimeMinutes} min read
+                </p>
+                <h1 className="mt-4 text-[clamp(2.25rem,5.4vw,3.5rem)] font-bold leading-[1.06] tracking-[-0.03em] text-foreground">
+                  {post.title}
+                </h1>
+                <p className="mt-5 text-[clamp(1.2rem,2.2vw,1.5rem)] font-medium leading-[1.35] tracking-[-0.012em] text-secondary">
+                  {post.subtitle}
+                </p>
+                {post.tags && post.tags.length > 0 && (
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <li key={tag} className="rounded-full bg-surface px-3 py-1.5 text-[12px] font-semibold text-foreground/70">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </header>
+            </div>
+
+            <div className="mx-auto mt-12 max-w-[920px] overflow-hidden rounded-tile md:mt-16">
+              <div className="flex aspect-[16/9] items-center justify-center bg-surface md:aspect-[2/1]">
+                <div className="w-full max-w-[440px] [zoom:1.15] sm:[zoom:1.35] md:[zoom:1.6]">
+                  <BlogVisual id={post.visual} />
+                </div>
               </div>
-              <h1 className="mt-5 font-display text-[clamp(2rem,4.5vw,2.75rem)] leading-[1.08] tracking-tight text-foreground">
-                {post.title}
-              </h1>
-              <p className="mt-4 text-[18px] leading-relaxed text-secondary">
-                {post.subtitle}
-              </p>
-              {post.tags && post.tags.length > 0 && (
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className="rounded-full border border-border px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-muted"
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </header>
-          </div>
+            </div>
 
-          <div className="mx-auto mt-10 max-w-[760px] overflow-hidden rounded-2xl border border-border bg-widget shadow-sm">
-            <BlogVisual id={post.visual} />
+            <div className="mx-auto mt-12 max-w-prose md:mt-16">
+              <BlogArticleBody post={post} />
+            </div>
           </div>
-
-          <div className="mx-auto mt-12 max-w-[760px]">
-            <BlogArticleBody post={post} />
-          </div>
-
-          {related.length > 0 && (
-            <aside className="mx-auto mt-20 max-w-[760px] border-t border-border pt-12">
-              <h2 className="font-display text-[1.35rem] tracking-tight text-foreground">
-                More insights
-              </h2>
-              <ul className="mt-6 space-y-4">
-                {related.map((item) => (
-                  <li key={item.slug}>
-                    <Link
-                      href={`/blog/${item.slug}`}
-                      className="group block rounded-xl border border-border bg-widget px-5 py-4 transition-shadow hover:shadow-sm"
-                    >
-                      <p className="font-display text-[1.1rem] leading-snug text-foreground transition-colors group-hover:text-accent">
-                        {item.title}
-                      </p>
-                      <p className="mt-1 text-[14px] text-secondary">
-                        {item.subtitle}
-                      </p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </aside>
-          )}
         </article>
+
+        {related.length > 0 && (
+          <aside className="mt-24 bg-surface py-20 md:mt-32 md:py-28">
+            <div className="container-site">
+              <h2 className="text-headline text-foreground">Keep reading</h2>
+              <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {related.map((item) => (
+                  <BlogCard key={item.slug} post={item} />
+                ))}
+              </div>
+            </div>
+          </aside>
+        )}
       </main>
       <Footer />
     </>

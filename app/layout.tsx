@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import OrganizationJsonLd from "@/components/OrganizationJsonLd";
 import PostHogProvider from "@/components/analytics/PostHogProvider";
 import RB2BScript from "@/components/analytics/RB2BScript";
+import { RevealScript } from "@/components/Reveal";
 import {
   getGoogleSiteVerification,
   SITE_DESCRIPTION,
@@ -11,19 +12,24 @@ import {
 } from "@/lib/seo";
 import "./globals.css";
 
-const archivo = Archivo({
+// SF Pro is used on Apple devices via the system stack; Inter stands in
+// everywhere else.
+const inter = Inter({
   subsets: ["latin"],
-  axes: ["wdth"],
-  variable: "--font-archivo",
+  variable: "--font-inter",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 const googleVerification = getGoogleSiteVerification();
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — AI Strategy & Deployment for CRE`,
+    default: `${SITE_NAME} — The AI Engineering Team for Commercial Real Estate`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -36,7 +42,7 @@ export const metadata: Metadata = {
     ? { verification: { google: googleVerification } }
     : {}),
   openGraph: {
-    title: `${SITE_NAME} — AI Strategy & Deployment for CRE`,
+    title: `${SITE_NAME} — The AI Engineering Team for Commercial Real Estate`,
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
     locale: "en_US",
@@ -45,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — AI Strategy & Deployment for CRE`,
+    title: `${SITE_NAME} — The AI Engineering Team for Commercial Real Estate`,
     description: SITE_DESCRIPTION,
   },
   alternates: {
@@ -59,10 +65,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${archivo.variable}`}>
-      <body className="overflow-x-hidden">
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="overflow-x-clip">
         <OrganizationJsonLd />
         <PostHogProvider>{children}</PostHogProvider>
+        <RevealScript />
         <RB2BScript />
       </body>
     </html>

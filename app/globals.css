@@ -4,164 +4,284 @@
 
 @layer base {
   :root {
-    --background: 12 26 39;      /* blueprint */
-    --widget: 18 37 52;          /* raised panel */
-    --foreground: 230 237 243;   /* paper white */
-    --surface: 16 32 46;
-    --border: 32 57 76;          /* hairline */
-    --surface-border: 38 66 88;
-    --footer-border: 28 50 68;
+    --background: 255 255 255;
+    --surface: 245 245 247; /* #f5f5f7 */
+    --widget: 255 255 255;
+    --foreground: 29 29 31; /* #1d1d1f */
+    --secondary: 110 110 115; /* #6e6e73 */
+    --muted: 134 134 139; /* #86868b */
+    --border: 210 210 215; /* #d2d2d7 */
+    --accent: 139 35 64; /* Chesterbrook maroon, tuned for links on white */
+    --accent-dark: 110 26 50;
+    --nav-h: 52px;
+    color-scheme: light;
   }
 
   html {
-    scroll-behavior: smooth;
     background-color: rgb(var(--background));
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     background-color: rgb(var(--background));
     color: rgb(var(--foreground));
     @apply font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
   }
 
-  .font-display {
-    font-variation-settings: "wdth" 118;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
-    @apply bg-accent/30 text-foreground;
+    background: rgb(var(--accent) / 0.18);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 }
 
 @layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Small coloured label that sits above a headline. */
   .eyebrow {
-    @apply font-sans text-[15px] font-medium text-accent;
+    @apply text-[17px] font-semibold tracking-[-0.01em] text-accent;
   }
 
-  .nav-link {
-    @apply relative inline-block transition-colors duration-300;
+  .eyebrow-dark {
+    @apply text-[17px] font-semibold tracking-[-0.01em] text-accent-light;
   }
 
-  .nav-link::after {
-    content: "";
-    @apply absolute -bottom-0.5 left-0 h-px w-0 bg-accent;
-    transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  /* Buttons: feedback lives on the press. */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-[22px] py-[11px] text-[17px] font-normal leading-none tracking-[-0.01em];
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      transform 120ms ease-out;
+    -webkit-tap-highlight-color: transparent;
   }
-
-  .nav-link:hover::after {
-    @apply w-full;
+  .btn:active {
+    transform: scale(0.97);
   }
-
-  .tag-pill {
-    @apply inline-block rounded-[3px] border border-border px-2.5 py-1 text-[12px] text-secondary;
-  }
-
-  .mockup-frame {
-    @apply rounded-lg border border-surface-border bg-background shadow-mockup;
-  }
-
-  .mockup-frame--empty {
-    @apply min-h-0 bg-surface;
-  }
-
   .btn-primary {
-    @apply rounded-full bg-accent px-6 py-2.5 text-[13px] font-medium text-white transition-colors duration-300 hover:bg-accent-dark;
+    @apply btn bg-accent text-white hover:bg-accent-dark;
+  }
+  .btn-secondary {
+    @apply btn border border-accent text-accent hover:bg-accent hover:text-white;
+  }
+  .btn-light {
+    @apply btn bg-white text-foreground hover:bg-white/85;
+  }
+  .btn-sm {
+    @apply px-3.5 py-[7px] text-[13px];
   }
 
-  .btn-primary--sm {
-    @apply px-4 py-2 text-[12px];
+  /* Apple-style inline link with a trailing chevron. */
+  .link-chevron {
+    @apply inline-flex items-center gap-1 text-[17px] text-accent;
+  }
+  .link-chevron:hover .link-label {
+    @apply underline underline-offset-[3px];
+  }
+  .link-chevron svg {
+    transition: transform 200ms ease-out;
+  }
+  .link-chevron:hover svg {
+    transform: translateX(2px);
   }
 
-  .bg-dot-grid {
-    background-image: radial-gradient(circle, rgb(32 57 76) 1px, transparent 1px);
-    background-size: 24px 24px;
+  /* Translucent material for floating chrome. */
+  .material-bar {
+    background: rgb(255 255 255 / 0.72);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .material-chip {
+    background: rgb(255 255 255 / 0.78);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    backdrop-filter: saturate(180%) blur(24px);
   }
 
+  @media (prefers-reduced-transparency: reduce) {
+    .material-bar,
+    .material-chip {
+      background: rgb(255 255 255);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    .material-bar {
+      background: rgb(255 255 255);
+      border-bottom: 1px solid rgb(var(--foreground));
+    }
+  }
+
+  .tile {
+    @apply relative isolate overflow-hidden rounded-tile;
+  }
+
+  /* -------- Blog prose -------- */
   .blog-prose {
-    @apply text-[17px] leading-[1.75] text-secondary;
+    @apply text-[19px] leading-[1.6] tracking-[-0.008em] text-foreground/90;
   }
-
   .blog-prose p {
     @apply mb-6;
   }
-
   .blog-prose h2 {
-    @apply mb-4 mt-12 font-display text-[clamp(1.35rem,3vw,1.75rem)] leading-snug tracking-tight text-foreground first:mt-0;
+    @apply mb-4 mt-14 text-[clamp(1.5rem,3vw,2rem)] font-bold leading-[1.15] tracking-[-0.02em] text-foreground first:mt-0;
   }
-
-  .blog-prose ul {
-    @apply mb-6 ml-5 list-disc space-y-3;
-  }
-
-  .blog-prose li {
-    @apply pl-1;
-  }
-
   .blog-prose h3 {
-    @apply mb-3 mt-9 font-display text-[1.15rem] leading-snug tracking-tight text-foreground;
+    @apply mb-3 mt-10 text-[1.3rem] font-semibold leading-snug tracking-[-0.015em] text-foreground;
   }
-
+  .blog-prose ul {
+    @apply mb-6 ml-5 list-disc space-y-3 marker:text-muted;
+  }
   .blog-prose ol {
-    @apply mb-6 ml-5 list-decimal space-y-3;
+    @apply mb-6 ml-5 list-decimal space-y-3 marker:text-muted;
   }
-
+  .blog-prose li {
+    @apply pl-1.5;
+  }
+  .blog-prose strong {
+    @apply font-semibold text-foreground;
+  }
   .blog-prose a {
     @apply text-accent underline decoration-accent/30 underline-offset-[3px] transition-colors duration-200 hover:decoration-accent;
   }
 
   .blog-table-wrap {
-    @apply mb-6 mt-2 overflow-x-auto rounded-xl border border-border;
+    @apply -mx-4 mb-8 mt-2 overflow-x-auto px-4 sm:mx-0 sm:px-0;
   }
-
   .blog-prose table {
-    @apply w-full border-collapse text-left text-[15px];
+    @apply w-full min-w-[520px] border-collapse text-left text-[15px] leading-snug;
   }
-
   .blog-prose th {
-    @apply border-b border-border bg-surface/60 px-4 py-3 text-[12px] font-medium uppercase tracking-[0.12em] text-muted;
+    @apply border-b border-foreground/80 px-3 py-3 text-[13px] font-semibold text-foreground first:pl-0;
   }
-
   .blog-prose td {
-    @apply border-b border-border/60 px-4 py-3 align-top leading-snug;
-  }
-
-  .blog-prose tbody tr:last-child td {
-    @apply border-b-0;
+    @apply border-b border-border px-3 py-3.5 align-top text-foreground/80 first:pl-0;
   }
 
   .blog-faq {
-    @apply mt-16 border-t border-border pt-10;
+    @apply mt-20 border-t border-border pt-12;
   }
-
-  .blog-faq dt {
-    @apply mb-2 font-display text-[1.05rem] leading-snug tracking-tight text-foreground;
+  .blog-faq h2 {
+    @apply mt-0;
   }
-
   .blog-faq dl {
-    @apply space-y-7;
+    @apply space-y-8;
   }
-
+  .blog-faq dt {
+    @apply mb-2 text-[19px] font-semibold leading-snug tracking-[-0.012em] text-foreground;
+  }
   .blog-faq dd {
-    @apply text-[16px] leading-relaxed text-secondary;
+    @apply text-[17px] leading-relaxed text-secondary;
   }
 
   .blog-cta {
-    @apply mt-14 rounded-2xl border border-accent/15 bg-widget px-6 py-8 text-center shadow-mockup md:px-10 md:py-10;
+    @apply my-16 rounded-card bg-surface px-6 py-10 text-center md:px-12 md:py-12;
   }
-
   .blog-cta p {
-    @apply mb-0 text-[16px] leading-relaxed text-secondary;
+    @apply mx-auto mb-0 max-w-[36ch] text-[21px] font-semibold leading-snug tracking-[-0.015em] text-foreground;
   }
-
   .blog-cta a {
-    @apply btn-primary mt-6 inline-block;
+    @apply btn-primary mt-6 no-underline hover:text-white;
+  }
+}
+
+/* Mobile navigation sheet — see components/Nav.tsx. */
+.mobile-sheet {
+  background: rgb(255 255 255 / 0.94);
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0.96);
+  transition:
+    opacity 250ms ease,
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s linear 350ms;
+}
+.mobile-sheet[data-open] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 250ms ease,
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s;
+}
+.mobile-sheet li {
+  opacity: 0;
+  transform: translate3d(0, -8px, 0);
+  transition:
+    opacity 300ms ease,
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-sheet[data-open] li {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-sheet,
+  .mobile-sheet li {
+    transform: none !important;
+  }
+}
+
+/* Scroll reveal — see components/Reveal.tsx. Hidden only once JS has
+   confirmed it can reveal it again. */
+.js [data-reveal]:not([data-shown]) {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+}
+[data-reveal] {
+  transition:
+    opacity 700ms cubic-bezier(0.25, 0.1, 0.25, 1) var(--reveal-delay, 0s),
+    transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal]:not([data-shown]) {
+    transform: none;
+  }
+  [data-reveal] {
+    transition: opacity 250ms ease var(--reveal-delay, 0s);
   }
 }
 
 @layer utilities {
   .scroll-mt-nav {
-    scroll-margin-top: 72px;
+    scroll-margin-top: calc(var(--nav-h) + 16px);
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

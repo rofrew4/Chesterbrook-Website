@@ -4,7 +4,7 @@ export const SITE_URL = "https://chesterbrookai.com";
 export const SITE_NAME = "Chesterbrook AI";
 
 export const SITE_DESCRIPTION =
-  "Chesterbrook AI builds AI-powered workflows for commercial real estate — deal sourcing, lease abstraction, and custom software for property managers, brokers, and developers.";
+  "Chesterbrook AI is the AI engineering team for commercial real estate firms. We take AI projects off your plate, connect your tech stack to one firm brain, and replace costly software with tools you own.";
 
 /** Paste the code from Google Search Console → HTML tag method → Vercel env var. */
 export function getGoogleSiteVerification(): string | undefined {

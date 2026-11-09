@@ -8,7 +8,7 @@ export default function InlineText({ text }: { text: string }) {
         switch (node.kind) {
           case "strong":
             return (
-              <strong key={i} className="font-medium text-foreground">
+              <strong key={i} className="font-semibold text-foreground">
                 {node.value}
               </strong>
             );

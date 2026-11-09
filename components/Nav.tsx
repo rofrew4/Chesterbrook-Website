@@ -1,184 +1,134 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { scrollToSection } from "@/lib/scroll";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { CALENDLY_URL } from "@/lib/links";
 import { SITE_NAME } from "@/lib/seo";
+import { navLinks } from "@/lib/site";
 import { BrandMark } from "./BrandMark";
-
-const sectionLinks = [
-  { label: "Strategy", href: "strategy" },
-  { label: "Common projects", href: "examples" },
-  { label: "Contact", href: "contact" },
-];
 
 export default function Nav() {
   const pathname = usePathname();
-  const router = useRouter();
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const isHome = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the sheet on navigation and lock scroll while it's open.
+  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
-  }, [menuOpen]);
+  }, [open]);
 
-  const handleSectionNav = (id: string) => {
-    setMenuOpen(false);
-    if (isHome) {
-      scrollToSection(id);
-      return;
-    }
-    router.push(`/#${id}`);
-  };
-
-  const handleTopNav = () => {
-    setMenuOpen(false);
-    if (isHome) {
-      scrollToSection("top");
-      return;
-    }
-    router.push("/");
-  };
-
-  const isBlog = pathname.startsWith("/blog");
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <>
-      <header
-        style={{ isolation: "isolate" }}
-        className={`fixed top-0 left-0 right-0 z-30 [transition:background-color_400ms_ease,border-color_400ms_ease,box-shadow_400ms_ease] ${
-          scrolled || menuOpen
-            ? "border-b border-border bg-background/90 shadow-sm backdrop-blur-md"
-            : "border-b border-transparent bg-background/70 backdrop-blur-sm"
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div
+        className={`material-bar relative z-[2] transition-[box-shadow] duration-300 ${
+          scrolled || open ? "shadow-[0_1px_0_rgba(0,0,0,0.08)]" : ""
         }`}
       >
-        <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 md:px-10">
-          <button
-            type="button"
-            onClick={handleTopNav}
-            aria-label={`${SITE_NAME} — back to top`}
-            className="flex items-center gap-[5px] font-display text-[18px] tracking-tight text-foreground transition-colors duration-200"
+        <nav
+          aria-label="Main"
+          className="container-site flex h-[var(--nav-h)] items-center justify-between"
+        >
+          <Link
+            href="/"
+            aria-label={`${SITE_NAME} home`}
+            className="-ml-1 flex items-center gap-2 rounded-md px-1 py-1 text-[17px] font-semibold tracking-[-0.02em] text-foreground"
           >
-            {/* 22px = 1.75x the 18px Fraunces cap height, matching the lockup spec */}
-            <BrandMark className="h-[22px] w-auto shrink-0 text-accent" />
-            <span>{SITE_NAME}</span>
-          </button>
+            <BrandMark className="h-[15px] w-auto text-accent" />
+            <span>Chesterbrook</span>
+          </Link>
 
           <div className="hidden items-center gap-8 md:flex">
-            {sectionLinks.map((link) => (
-              <button
+            {navLinks.map((link) => (
+              <Link
                 key={link.href}
-                type="button"
-                onClick={() => handleSectionNav(link.href)}
-                className="nav-link text-[13px] text-secondary transition-colors duration-200 hover:text-accent"
+                href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`text-[13px] tracking-[-0.005em] transition-colors duration-200 ${
+                  isActive(link.href)
+                    ? "text-foreground"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
-            <Link
-              href="/about"
-              className={`nav-link text-[13px] transition-colors duration-200 ${
-                pathname.startsWith("/about")
-                  ? "text-accent"
-                  : "text-secondary hover:text-accent"
-              }`}
-            >
-              About
-            </Link>
-            <Link
-              href="/blog"
-              className={`nav-link text-[13px] transition-colors duration-200 ${
-                isBlog ? "text-accent" : "text-secondary hover:text-accent"
-              }`}
-            >
-              Blog
-            </Link>
+          </div>
+
+          <div className="flex items-center gap-2">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary btn-primary--sm"
+              className="btn-primary btn-sm"
             >
-              Book a consult
+              Book a call
             </a>
-          </div>
-
-          <button
-            type="button"
-            className="relative z-[2] flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-          >
-            <span
-              className={`block h-px w-5 bg-foreground [transition:transform_300ms_ease] ${
-                menuOpen ? "translate-y-[3.5px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-5 bg-foreground [transition:transform_300ms_ease] ${
-                menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
-              }`}
-            />
-          </button>
-        </nav>
-      </header>
-
-      <div
-        className={`fixed inset-0 z-20 flex flex-col items-center justify-center bg-background transition-opacity duration-300 md:hidden ${
-          menuOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
-        }`}
-      >
-        <div className="flex flex-col items-center gap-8">
-          {sectionLinks.map((link) => (
             <button
-              key={link.href}
               type="button"
-              onClick={() => handleSectionNav(link.href)}
-              className="font-display text-3xl tracking-tight text-foreground"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              className="-mr-2 flex h-10 w-10 items-center justify-center rounded-full md:hidden"
             >
-              {link.label}
+              <span className="relative block h-3 w-[18px]">
+                <span
+                  className={`absolute left-0 h-[1.5px] w-full rounded-full bg-foreground transition-transform duration-300 ease-out ${
+                    open ? "top-[5px] rotate-45" : "top-0.5"
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 h-[1.5px] w-full rounded-full bg-foreground transition-transform duration-300 ease-out ${
+                    open ? "top-[5px] -rotate-45" : "top-[9px]"
+                  }`}
+                />
+              </span>
             </button>
-          ))}
-          <Link
-            href="/about"
-            onClick={() => setMenuOpen(false)}
-            className="font-display text-3xl tracking-tight text-foreground"
-          >
-            About
-          </Link>
-          <Link
-            href="/blog"
-            onClick={() => setMenuOpen(false)}
-            className="font-display text-3xl tracking-tight text-foreground"
-          >
-            Blog
-          </Link>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="btn-primary mt-4"
-          >
-            Book a consult
-          </a>
-        </div>
+          </div>
+        </nav>
       </div>
-    </>
+
+      {/* Mobile sheet: grows down from the bar that opened it and leaves the
+          same way. CSS transitions, so it reverses cleanly mid-flight. */}
+      <div
+        id="mobile-menu"
+        data-open={open || undefined}
+        // React 18 has no boolean `inert`; an empty string sets the attribute.
+        {...(open ? {} : ({ inert: "" } as object))}
+        className="mobile-sheet material-bar fixed inset-0 z-[1] md:hidden"
+      >
+        <ul className="container-site pt-[calc(var(--nav-h)+20px)]">
+          {navLinks.map((link, i) => (
+            <li key={link.href} style={{ transitionDelay: open ? `${40 + i * 30}ms` : "0ms" }}>
+              <Link
+                href={link.href}
+                className={`block py-2.5 text-[28px] font-semibold tracking-[-0.025em] ${
+                  isActive(link.href) ? "text-foreground" : "text-foreground/80"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
   );
 }

@@ -300,7 +300,7 @@ function RoleTasksVisual() {
 
 export default function BlogVisual({ id }: { id: BlogVisualId }) {
   return (
-    <div className="overflow-hidden rounded-t-xl border-b border-border bg-surface/50">
+    <div className="flex h-full w-full items-center justify-center bg-surface [&>*]:w-full">
       {id === "public-records" && <PublicRecordsVisual />}
       {id === "software-stack" && <SoftwareStackVisual />}
       {id === "ai-stages" && <AiStagesVisual />}
